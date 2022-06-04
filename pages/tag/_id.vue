@@ -28,7 +28,26 @@
                 <v-spacer></v-spacer>
             </v-col>
         </v-row>
-               <v-row>
+        <v-row>
+            <v-col cols="0" lg="2">
+                <v-spacer></v-spacer>
+            </v-col>
+            <v-col cols="12" lg="8">
+                <v-card>
+                  <v-img
+                      :lazy-src= "tagStore.avatar"
+                      max-height="150"
+                      max-width="250"
+                      :src= "tagStore.avatar"
+                  ></v-img>
+                </v-card>
+            </v-col>
+            <v-col cols="0" lg="2">  
+                <v-spacer></v-spacer>
+            </v-col>
+        </v-row>
+        
+        <v-row>
             <v-col cols="0" lg="2">
                 <v-spacer></v-spacer>
             </v-col>
@@ -54,6 +73,9 @@ export default {
         tagStore
       }
     },
+    data: () => ({
+      avatarUrl: ''
+    }),
        computed: {
     tag() {
       return this.tagStore.tag
@@ -64,7 +86,14 @@ export default {
   },
     created() {
       this.tagStore.fetchTag(this.id)
+      this.tagStore.getPicture()
+      this.avatarUrl = this.tagStore.avatar
   },
+  mounted(){
+     this.avatarUrl = this.tagStore.avatar
+     console.log('this avatarUrl au montage')
+     console.log(this.avatarUrl)
+  }
 }
 </script>
 <style>

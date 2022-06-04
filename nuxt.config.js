@@ -39,11 +39,19 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/composition-api/module',
+    '@nuxtjs/composition-api/module','@nuxtjs/strapi',
    // '@pinia/nuxt',
    // '@nuxtjs/eslint-module',
    // '@nuxtjs/axios'
   ],
+
+  strapi: {
+    // Options
+    url: process.env.STRAPI_URL || 'https://strapi-nb0l.onrender.com/',
+    prefix: '/api',
+    version: 'v4',
+    cookie: {},
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

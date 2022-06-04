@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
-    <form @submit.prevent="sendToStrapi">
+    <form ref="uploadForm" @submit.prevent="sendToStrapi">
       <input type="text" name="name">
-      <input type="file" name="image">
-      <input type="submit" name="Submit">
+      <input type="file" name="image" @change="handleFileUpload">
+      <input type="submit" name="Submit" @click="sendToStrapi">
     </form>
   </div>
 </template>
@@ -11,29 +11,27 @@
 <script>
 import axios from 'axios'
 export default {
+  data: () => ({
+    form: [],
+    formElements: [],
+    data: {},
+    selectedFile: null
+  }),
+  mounted() {
+     this.form = this.$refs.uploadForm;
+  },
   methods:{
+    handleFileUpload(event) {
+          this.selectedFile = event.target.files[0]
+          console.log(this.selectedFile)
+        },
     sendToStrapi() {
-      const form = this.$refs["upload-Form"];
-      const formData = new FormData();
-      const formElements = form.elements;
-      const data = {};
-      formElements.forEach(currentElement => {
-        if (!["submit", "file"].includes(currentElement.type)) {
-          data[currentElement.name] = currentElement.value;
-        } else if (currentElement.type === "file") {
-          if (currentElement.files.length === 1) {
-            const file = currentElement.files[0];
-            formData.append(`files.${currentElement.name}`, file, file.name);
-          } else {
-            for (let i = 0; i < currentElement.files.length; i++) {
-              const file = currentElement.files[i];
-              formData.append(`files.${currentElement.name}`, file, file.name);
-            }
-          }
-        }
-      });
-      formData.append("data", JSON.stringify(data));
-      axios.post("https://strapi-nb0l.onrender.com/tags/", formData).then(res => console.log(res));
+      const formData = new FormData()
+      // formData.append("data", JSON.stringify(this.data));
+      formData.append('picture',this.selectedFile,'picture')
+
+      console.log(formData)
+      axios.post("https://strapi-nb0l.onrender.com/api/upload", formData).then(res => console.log(res));
       }
     }
   }

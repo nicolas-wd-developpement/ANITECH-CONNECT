@@ -21,6 +21,11 @@
               color="primary lighten-1"
               dark
             >
+              <input 
+                label="Pet photo"
+                type="file" 
+                name="image"
+                @change="handleFileUpload">
               <v-card-text>
                 <v-text-field
                   v-model="name" 
@@ -138,8 +143,6 @@
 import { validationMixin } from 'vuelidate'
 import { required, maxLength, minLength, email } from 'vuelidate/lib/validators'
 import { useTagStore } from '../store/TagStore'
-
-
 export default {
   name: 'IndexPage',
   mixins: [validationMixin],
@@ -170,6 +173,7 @@ export default {
       phoneNumber: '',
       tagNumber: '',
       select: null,
+      selectedFile: null,
       breed: '',
       checkbox: false,
       showPassword: false,
@@ -212,7 +216,6 @@ export default {
             }
     }),
   computed: {
-
       checkboxErrors () {
         const errors = []
         if (!this.$v.checkbox.$dirty) return errors
@@ -260,17 +263,22 @@ export default {
       loader () {
         const l = this.loader
         this[l] = !this[l]
-
         setTimeout(() => (this[l] = false), 3000)
-
         this.loader = null
       },
     },
     methods: {
-        upLoadPicture() {
-        
+        handleFileUpload(event) {
+          this.selectedFile = event.target.files[0]
         },
         onSubmit() {
+          const formData = new FormData()
+          const fileName = this.tagNumber + '.jpeg'
+          console.log(fileName)
+          formData.append('files.picture', this.selectedFile, fileName)
+          for(const pair of formData.entries()) {
+          console.log(pair[0]+ ', '+ pair[1]);
+          }
           if(!this.$v.checkbox.$dirty) {
             this.$v.$touch()
            return
@@ -283,9 +291,9 @@ export default {
               breed: this.breed,
               phoneNumber: this.phoneNumber,
               emailAddress: this.emailAddress,
-              password: this.password
+              password: this.password,
+              picture: this.selectedFile
             }
-
             this.dataTag.data.breed = this.breed
             this.dataTag.data.mail = this.emailAddress
             this.dataTag.data.name = this.name
@@ -293,7 +301,12 @@ export default {
             this.dataTag.data.tagId = this.tagNumber
             this.dataTag.data.tagnumber = this.tagNumber
             this.dataTag.data.password = this.password
-            this.tagStore.createTag(this.dataTag).then(() => {
+            console.log(this.dataTag.data)
+            formData.append('data', JSON.stringify(this.dataTag.data));
+           for(const pair of formData.entries()) {
+           console.log(pair[0]+ ', '+ pair[1]);
+           }
+            this.tagStore.createTag(formData).then(() => {
               this.$router.push({
                 name: 'tag-id',
                 params: { id: tag.tagNumber }
@@ -314,15 +327,12 @@ export default {
 .display-2 {
     color: white;
 }
-
 h1 {
   text-align: center;
 }
-
 h2 {
   text-align: center;
 }
-
 h3 {
   text-align: center;
 }
@@ -331,7 +341,6 @@ h3 {
   align-items: center;
   justify-content: center;
 }
-
   .custom-loader {
     animation: loader 1s infinite;
     display: flex;
