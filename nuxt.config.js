@@ -39,7 +39,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/composition-api/module','@nuxtjs/strapi',
+    '@nuxtjs/composition-api/module'
    // '@pinia/nuxt',
    // '@nuxtjs/eslint-module',
    // '@nuxtjs/axios'
