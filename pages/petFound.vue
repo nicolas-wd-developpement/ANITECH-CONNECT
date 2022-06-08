@@ -1,5 +1,5 @@
 <template>
-<v-main black>
+<v-main class="white" height=600 pa-md-4 mx-lg-auto>
         <v-card-text black class="firstBlock">
           <v-row>
               <v-col cols="0" lg="2">
@@ -129,5 +129,13 @@ export default {
 }
 </script>
 <style>
+
+.v-application .white {
+    background-color: #fff!important;
+    border-color: #fff!important;
+    padding-top: 20px;
+    maring-top: 20px;
+    height: 610px;
+}
 
 </style>

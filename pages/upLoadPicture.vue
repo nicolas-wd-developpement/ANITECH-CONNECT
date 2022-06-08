@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="white" height=600 pa-md-4 mx-lg-auto>
     <form ref="uploadForm" @submit.prevent="sendToStrapi">
       <input type="text" name="name">
       <input type="file" name="image" @change="handleFileUpload">

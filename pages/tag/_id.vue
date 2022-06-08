@@ -1,66 +1,86 @@
 <template>
-    <v-main>
-          <v-row>
-            <v-col cols="0" lg="2">
-                <v-spacer></v-spacer>
-            </v-col>
-            <v-col cols="12" lg="8">
-                <v-text>
-                    <h1>Welcome to the id card of {{ tagStore.tag.name }}</h1>
-                </v-text>
-            </v-col>
-            <v-col cols="0" lg="2">  
-                <v-spacer></v-spacer>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols="0" lg="2">
-                <v-spacer></v-spacer>
-            </v-col>
-            <v-col cols="12" lg="8">
-                <v-text>
-                    <h1> #ID N° {{ $route.params.id }}</h1>
-                    <h2> My name is {{ tagStore.tag.name}}</h2>
-                    <h3> I am a {{tagStore.tag.breed}}</h3>
-                </v-text>
-            </v-col>
-            <v-col cols="0" lg="2">  
-                <v-spacer></v-spacer>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols="0" lg="2">
-                <v-spacer></v-spacer>
-            </v-col>
-            <v-col cols="12" lg="8">
-                <v-card>
-                  <v-img
-                      :lazy-src= "tagStore.avatar"
-                      max-height="150"
-                      max-width="250"
-                      :src= "tagStore.avatar"
-                  ></v-img>
-                </v-card>
-            </v-col>
-            <v-col cols="0" lg="2">  
-                <v-spacer></v-spacer>
-            </v-col>
-        </v-row>
-        
-        <v-row>
-            <v-col cols="0" lg="2">
-                <v-spacer></v-spacer>
-            </v-col>
-            <v-col cols="12" lg="8">
-                <v-text>
-                    <p> Please contact my owner email <a href={{tagStore.tag.mail}}>{{tagStore.tag.mail}}</a></p>
-                    <p> Please contact or phone {{tagStore.tag.phoneNumber}}</p>
-                </v-text>
-            </v-col>
-            <v-col cols="0" lg="2">  
-                <v-spacer></v-spacer>
-            </v-col>
-        </v-row>
+    <v-main height=600 pa-md-4 mx-lg-auto> 
+          <v-container margin-top="20px">
+          <v-row justify="space-around">
+            <v-card width="600">
+              <v-img
+                height="400"
+                :src="tagStore.avatar"
+              >
+                <v-app-bar
+                  flat
+                  color="rgba(0, 0, 0, 0)"
+                >
+                  <v-alert
+                  elevation="19"
+                  shaped
+                  type="info"
+                  class="dogName"
+                 >
+                  <span> #ID N° {{ $route.params.id }} - {{ tagStore.tag.name }} </span>
+                  </v-alert>
+
+                  <v-spacer></v-spacer>
+
+                </v-app-bar>
+
+                <v-card-title class="white--text mt-8">
+                  <v-avatar size="100">
+                    <img
+                      alt="tagStore.tag.name"
+                      :src="tagStore.avatar"
+                    >
+                  </v-avatar>
+                  <h3 class="ml-3">                   
+                  </h3>
+
+                </v-card-title>
+              </v-img>
+
+              <v-card-text>
+                <div class="font-weight-bold ml-8 mb-2">
+                  Contact details
+                </div>
+
+                <v-timeline
+                  align-top
+                  dense
+                >
+                  <v-timeline-item
+                    color=success
+                    icon="mdi-account-circle"
+                  >
+                    <div>
+                      <div>
+                        <p> My name is {{ tagStore.tag.name}}, I am a {{tagStore.tag.breed}}</p>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item
+                    color=primary
+                    icon="mdi-phone-forward"
+                  >
+                    <div>
+                      <div>
+                        <p> Please contact or phone <span style="font-weight:bolder"> {{tagStore.tag.phoneNumber}} </span> </p>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item
+                    color=warning
+                    icon= "mdi-email"
+                  >
+                    <div>
+                      <div >
+                        <p> email address <span style="font-weight:bolder">  <a href={{tagStore.tag.mail}}>{{tagStore.tag.mail}}</a> </span> </p>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                </v-timeline>
+              </v-card-text>
+            </v-card>
+          </v-row>
+        </v-container>
     </v-main>
 </template>
 
@@ -86,13 +106,14 @@ export default {
   },
     created() {
       this.tagStore.fetchTag(this.id)
-      this.tagStore.getPicture()
-      this.avatarUrl = this.tagStore.avatar
+      this.avatarUrl = this.tagStore.getPicture(this.id)
+      console.log('this avatarUrl à la création')
+     console.log(this.avatarUrl)
   },
   mounted(){
      this.avatarUrl = this.tagStore.avatar
      console.log('this avatarUrl au montage')
-     console.log(this.avatarUrl)
+     console.log(this.tagStore.url)
   }
 }
 </script>
@@ -111,6 +132,8 @@ h3 {
 
 p {
   text-align: center;
+  color: black;
+  font-size: 20px ;
 }
 
 .col {
@@ -120,5 +143,21 @@ p {
 }
 .firstBlock{
     margin-top: -35px;
+}
+.dogName{
+  font-size: x-large;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin: 10px;
+  padding: 20px;
+}
+
+.v-alert {
+    margin-bottom: -15px !important;
+}
+
+.v-card__text {
+    width: 100%;
+    color: black !important;
+    font-size: 20px;
 }
 </style>

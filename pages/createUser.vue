@@ -1,4 +1,5 @@
 <template>
+<v-main height=600 pa-md-4 mx-lg-auto>
   <v-form v-model="valid" @submit.prevent="createUser">
     <v-container>
       <v-row>
@@ -58,6 +59,7 @@
       Validate
     </v-btn>
   </v-form>
+</v-main>
 </template>
 
 

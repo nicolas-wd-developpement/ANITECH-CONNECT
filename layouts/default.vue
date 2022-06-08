@@ -46,19 +46,12 @@ export default {
 <style>
 h1 {
   text-align: center;
-    box-shadow: 10px 5px 5px lightgray;
-  padding: 25px;
-  margin-left: 15px;
-   margin-right: 15px;
+  margin-top: -20px;
 
 }
 
 h2 {
   text-align: center;
-  box-shadow: 10px 5px 5px lightgray;
-  padding: 25px;
-  margin-left: 15px;
-  margin-right: 15px;
 }
 
 h3 {
@@ -68,5 +61,17 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.v-application .white {
+    background-color: #fff!important;
+    border-color: #fff!important;
+    padding-top: 20px !important;
+    margin-top: 20px  !important;
+    height: 710px;
+}
+
+element.style {
+    padding: 20px 0px 20px;
 }
 </style>

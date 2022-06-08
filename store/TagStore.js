@@ -4,26 +4,27 @@ export const useTagStore = defineStore('TagStore',{
     state() {
         return {
             tags: [],
-            avatar:"",
+            avatar:'',
             tag: {},
             user: {},
             name:'',
             tagNumber:'',
             breed:'',
+            url:'',
             phoneNumber:'',
             emailAddress:'',
             picture:null,
             dataPicture: {
               "attributes": {
-                "name": "test",
-                "mail": "test@test.fr",
-                "phoneNumber": "7894561313",
-                "breed": "caniche",
-                "tagnumber": "789456",
-                "tagId": "789456",
-                "createdAt": "2022-06-04T06:12:45.909Z",
-                "updatedAt": "2022-06-04T06:12:45.909Z",
-                "publishedAt": "2022-06-04T06:12:45.658Z",
+                "name": "",
+                "mail": "",
+                "phoneNumber": "",
+                "breed": "",
+                "tagnumber": "",
+                "tagId": "",
+                "createdAt": "",
+                "updatedAt": "",
+                "publishedAt": "",
                 "oderid": null,
                 "picture": {
                   "attributes": {
@@ -49,11 +50,11 @@ export const useTagStore = defineStore('TagStore',{
                                                   "height": "",
                                                   "formats": {
                                                       "large": {
-                                                          "ext": ".jpeg",
-                                                          "url": "/uploads/large_789456_368fbbf7bd.jpeg",
-                                                          "hash": "large_789456_368fbbf7bd",
-                                                          "mime": "image/jpeg",
-                                                          "name": "large_789456.jpeg",
+                                                          "ext": "",
+                                                          "url": "",
+                                                          "hash": "",
+                                                          "mime": "",
+                                                          "name": "",
                                                           "path": null,
                                                           "size": "",
                                                           "width": "",
@@ -106,17 +107,14 @@ export const useTagStore = defineStore('TagStore',{
             .then(response => {
               this.dataTag = response.data
               this.tag = this.dataTag.data[0].attributes
-
             })
         },
-        getPicture() {
+        getPicture(id) {
           EventService.getPicture()
           .then(response => {
             this.dataPicture = response.data
-            const isGtagNumber = (element) => element === this.tagNumber
-            console.log(this.dataPicture.data.findIndex(isGtagNumber))
-            this.avatar = "https://strapi-nb0l.onrender.com" + this.dataPicture.data[1].attributes.picture.data[0].attributes.url
-            console.log('this.avatar')
+            this.avatar = this.getUrl(id)
+            console.log(this.getUrl(id))
             console.log(this.avatar)
             return this.avatar
           })
@@ -127,6 +125,38 @@ export const useTagStore = defineStore('TagStore',{
         createUser(user) {
           return  EventService.createUser(user)
         },
+        getUrl(id){
+         // Research pictures' URLS
+         const arrayToBoucle = Object.entries(this.dataPicture.data)
+         arrayToBoucle.forEach((element,index) => {
+          const arrayData = Object.entries(this.dataPicture.data[index])
+          console.log('this.dataPicture.entries:')
+          console.log(arrayData)
+          const arrayDataAttributes = Object.entries(arrayData[1][1])
+          console.log('arrayDataAttributes:')
+          console.log(arrayDataAttributes)
+          const arrayPictureAttributes = Object.entries(arrayDataAttributes[10][1])
+          console.log('arrayPictureAttributesURL:')
+          console.log(arrayPictureAttributes)
+          const arrayPictureAttributesDetails = Object.entries(arrayPictureAttributes[0][1][0])
+          console.log("arrayPictureAttributesDetails[1][1]")
+          console.log(arrayPictureAttributesDetails)
+          const Pitcturedetails = Object.entries(arrayPictureAttributesDetails[1][1])
+          console.log("Current id")
+          console.log(arrayDataAttributes[4][1])
+          console.log("this.tagNumber")
+          console.log(id)
+          if (arrayDataAttributes[4][1]===id) {
+            console.log('url:')
+            console.log(Pitcturedetails[10][1])
+            this.url = 'https://strapi-nb0l.onrender.com' + Pitcturedetails[10][1]
+            console.log(this.url)
+            return this.url 
+          }
+         });
+            console.log(this.url)
+            return this.url
+        }
     
     },
 })
