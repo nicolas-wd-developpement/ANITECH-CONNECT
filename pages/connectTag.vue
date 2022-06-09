@@ -18,7 +18,7 @@
               <v-spacer></v-spacer>
           </v-col>
           <v-col cols="12" lg="8">
-            <v-card width="400" class="mx-auto mt-5 grey">
+            <v-card width="400" class="mx-auto mt-5">
               <v-form @submit.prevent="onSubmit">
                 <!-- -->
                 <v-card
@@ -26,9 +26,10 @@
                   color="primary lighten-1"
                   dark
                 >
-                    <input
+                 <v-card-text>
+                    <v-file-input
                       v-show= "stepOne"
-                      id="btnLoad"
+                      id="file-upload"
                       label="Pet photo"
                       type="file"
                       name="image"
@@ -36,6 +37,8 @@
                       prepend-icon="mdi-camera"
                       @change="handleFileUpload"
                      >
+                    </v-file-input>
+                  </v-card-text>
                   <v-card-text>
                     <v-text-field
                      v-show= "stepOne"
@@ -53,7 +56,7 @@
                       v-model="phoneNumber"
                       type="phone"
                       label="Phone Number"
-                      prepend-icon="mdi-account-circle"
+                      prepend-icon="mdi-phone"
                       required
                       :error-messages="phoneNumberErrors"
                       @input="$v.phoneNumber.$touch()"
@@ -65,7 +68,7 @@
                       v-model="emailAddress"
                       type="email"
                       label="email"
-                      prepend-icon="mdi-account-circle"
+                      prepend-icon="mdi-email"
                       :error-messages="emailErrors"
                       required
                       @input="$v.emailAddress.$touch()"
@@ -110,13 +113,13 @@
                       @change="$v.checkbox.$touch()"
                       @blur="$v.checkbox.$touch()"
                     ></v-checkbox>
-                  <v-divider></v-divider>
+
                   <v-card-actions>
                       <v-btn class="stepBtn" @click="stepOne= !stepOne">
                         <span v-show="stepOne"> Next </span>
                         <span v-show="!stepOne"> Back </span>
                       </v-btn>
-                      <v-divider></v-divider>
+                    <v-spacer></v-spacer>
                     <v-tex v-if="!checkbox  || !tagNumber || !emailAddress || !phoneNumber   ">
                       <v-btn
                       v-show= "!stepOne"
@@ -140,7 +143,6 @@
                       </v-btn>
                     </v-text>
                   </v-card-actions>
-                  <v-spacer></v-spacer>
                   <v-snackbar
                     v-model="hasSaved"
                     :timeout="2000"
@@ -165,7 +167,6 @@
           </v-img>
         </v-col>
       </v-row>
-     <v-spacer class="footer-Form"></v-spacer>
   </v-main>
 </template>
 
@@ -799,7 +800,8 @@ export default {
     },
     methods: {
         handleFileUpload(event) {
-          this.selectedFile = event.target.files[0]
+          // this.selectedFile = event.target.files[0]
+           this.selectedFile = event;
         },
         onSubmit() {
           const formData = new FormData()
@@ -914,13 +916,25 @@ form {
       transform: rotate(360deg);
     }
   }
-  #btnLoad {
-    background-color: primary;
-    color: white;
-    font-size: larger;
-    font-weight: bolder;
-  }
+
   .stepBtn {
     float: left;
   }
+
+  input[type="file" i] {
+    display: none;
+}
+
+.v-sheet.v-card:not(.v-sheet--outlined) {
+    box-shadow: 0 0px 0px 0px rgb(0 0 0 / 0%), 0 0px 0px 0 rgb(0 0 0 / 14%), 0 0px 5px 0 rgb(0 0 0 / 12%) !important;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.custom-file-upload {
+
+}
 </style>

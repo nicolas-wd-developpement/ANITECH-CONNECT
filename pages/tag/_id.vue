@@ -72,7 +72,7 @@
                   >
                     <div>
                       <div >
-                        <p> email address <span style="font-weight:bolder">  <a href={{tagStore.tag.mail}}>{{tagStore.tag.mail}}</a> </span> </p>
+                        <p> email adress <span style="font-weight:bolder">  <a href={{tagStore.tag.mail}}> {{tagStore.tag.mail}} </a> </span> </p>
                       </div>
                     </div>
                   </v-timeline-item>
