@@ -3,8 +3,6 @@
         <v-card-text>
                 <h1>The tag id you entered is not saved in our database.</h1>
         </v-card-text>
-        </v-card>
-
         <v-spacer></v-spacer>
         <v-container>
           <v-row
