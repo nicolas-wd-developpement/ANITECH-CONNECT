@@ -1,11 +1,11 @@
 <template>
        <v-main > 
             <v-app-bar app color="primary">
-                <v-toolbar-title> ANITECH Connect your dog</v-toolbar-title>
+                <v-toolbar-title> <v-btn class="title" to="/">ANITECH CONNECT your dogs</v-btn></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn text rounded to="/">Home</v-btn>
                 <v-btn text rounded to="/connectTag">Connect a new tag</v-btn>
-                <v-btn text rounded to="/petFound">You found a</v-btn>
+                <v-btn text rounded to="/petFound">You found a pet</v-btn>
                 <!-- 
                 <v-btn text rounded to="/dashBoard">Fonctionnement</v-btn>
                 <v-btn text rounded to="/loginUser">Se connecter</v-btn>
@@ -36,5 +36,10 @@
 <style lang="scss" scoped>
 a{
     text-decoration-line:none;
+}
+
+.title{
+    background: #1976D2 !important;
+    color: white
 }
 </style>

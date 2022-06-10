@@ -14,35 +14,32 @@
           </v-row>
         </v-card-text>
         <!-- lOGIN modal-->
-        <v-card width="400" class="mx-auto mt-5 grey">
+        <v-card width="400" class="mx-auto mt-5" color="primary">
           <v-form @submit.prevent="onSubmit">
             <!-- -->
-            <v-card
-              class="overflow-hidden"
-              color="primary lighten-1"
-              dark
-            >
-                  <v-text-field
-                  v-model="tag.tagNumber"
-                  :disabled="!isEditing"
-                  color="white"
-                  label="Enter the tag number written on the medal Ex: ABC123"
-                ></v-text-field>
-              <v-divider></v-divider>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn
+                <v-text-field
+                v-model="tag.tagNumber"
+                :disabled="!isEditing"
+                prepend-icon="mdi-account-circle"
+                color="white"
+                label="Enter the tag number written on the medal Ex: ABC123"
+              ></v-text-field>
+              <v-row justify="space-between">
+                <v-col></v-col>
+                <v-col>
+                  <v-btn
                   :disabled="!isEditing"
                   color="success"
                   type="submit"
                   @click="save, onSubmit"
-                >
-                  Save
-                </v-btn>
-              </v-card-actions>
-              <v-spacer></v-spacer>
+                  >
+                   Research
+                  </v-btn>
+                 </v-col>
+                <v-col></v-col>
+              </v-row>
               <v-snackbar
-                v-model="hasSaved"
+                v-model="hasSearched"
                 :timeout="2000"
                 absolute
                 bottom
@@ -50,7 +47,6 @@
               >
                 We are looking for the pet
               </v-snackbar>
-            </v-card>
           </v-form>
          </v-card>
         <v-card black>
@@ -63,6 +59,7 @@
 
 <script>
 import { useTagStore } from '../store/TagStore'
+import EventService from '../services/EventService.js'
 export default {
   name: 'IndexPage',
     setup(){
@@ -72,6 +69,7 @@ export default {
       }
   },
     data: () => ({
+    hasSearched: false,
     showPassword: false,
     collapseOnScroll: true,
     links:[
@@ -112,18 +110,40 @@ export default {
         this.hasSaved = true
       },
         onSubmit() {
-          const tag = {
-            ...this.tag,
-            name: this.tag.name,
-            id: this.tag.tagNumber,
-            breed: this.tag.breed,
-            phoneNumber: this.tag.phoneNumber,
-            emailAddress: this.tag.emailAddress
+          this.hasSearched = true
+          EventService.getPicture(this.tag.tagNumber).then(response => {
+          this.dataPicture = response.data
+          const arrayToBoucle = Object.entries(this.dataPicture.data)
+          arrayToBoucle.forEach((element,index) => {
+            const arrayData = Object.entries(this.dataPicture.data[index])
+            const arrayDataAttributes = Object.entries(arrayData[1][1])
+            // check if tag required exist
+            if (arrayDataAttributes[4][1]===this.tag.tagNumber) {
+              this.hasSearched = false
+              const tag = {
+                ...this.tag,
+                name: this.tag.name,
+                id: this.tag.tagNumber,
+                breed: this.tag.breed,
+                phoneNumber: this.tag.phoneNumber,
+                emailAddress: this.tag.emailAddress
+              }
+              this.$router.push({
+                name: 'tag-id',
+                params: { id: tag.tagNumber }
+                })
+            }
+          })
+          if (this.hasSearched){
+            this.hasSearched = false
+            throw new Error(`Tag not found ID : ${this.tag.tagNumber}`);
           }
-          this.$router.push({
-            name: 'tag-id',
-            params: { id: tag.tagNumber }
-            })
+        }).catch( response => {
+                        // tag required does not exist
+              this.$router.push({
+                name: 'tagIDError'
+                })
+        })
         }
     },
 }

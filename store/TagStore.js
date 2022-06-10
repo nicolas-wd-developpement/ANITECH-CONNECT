@@ -141,22 +141,36 @@ export const useTagStore = defineStore('TagStore',{
           const arrayPictureAttributesDetails = Object.entries(arrayPictureAttributes[0][1][0])
           console.log("arrayPictureAttributesDetails[1][1]")
           console.log(arrayPictureAttributesDetails)
-          const Pitcturedetails = Object.entries(arrayPictureAttributesDetails[1][1])
+          const PictureDetails = Object.entries(arrayPictureAttributesDetails[1][1])
           console.log("Current id")
           console.log(arrayDataAttributes[4][1])
           console.log("this.tagNumber")
           console.log(id)
           if (arrayDataAttributes[4][1]===id) {
             console.log('url:')
-            console.log(Pitcturedetails[10][1])
-            this.url = 'https://strapi-nb0l.onrender.com' + Pitcturedetails[10][1]
+            console.log(PictureDetails[10][1])
+            this.url = 'https://strapi-nb0l.onrender.com' + PictureDetails[10][1]
             console.log(this.url)
             return this.url 
           }
          });
             console.log(this.url)
             return this.url
-        }
+        },
+        getTagById(id){
+          // Research pictures' URLS
+          EventService.getPicture(id).then(response => {
+            this.dataPicture = response.data
+            const arrayToBoucle = Object.entries(this.dataPicture.data)
+            arrayToBoucle.forEach((element,index) => {
+             const arrayData = Object.entries(this.dataPicture.data[index])
+             const arrayDataAttributes = Object.entries(arrayData[1][1])
+             if (arrayDataAttributes[4][1]===id) {
+              return true
+             }else return false
+            })
+          })
+         }
     
     },
 })

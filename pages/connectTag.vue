@@ -18,7 +18,7 @@
               <v-spacer></v-spacer>
           </v-col>
           <v-col cols="12" lg="8">
-            <v-card width="400" class="mx-auto mt-5">
+            <v-card width="400" pa-md-4 class="mx-auto mt-5">
               <v-form @submit.prevent="onSubmit">
                 <!-- -->
                 <v-card
@@ -150,7 +150,7 @@
                     bottom
                     left
                   >
-                    Your profile has been updated
+                    Your Tag is goind to be saved
                   </v-snackbar>
                 </v-card>
               </v-form>
@@ -806,6 +806,7 @@ export default {
         onSubmit() {
           const formData = new FormData()
           const fileName = this.tagNumber + '.jpeg'
+          this.hasSaved = true
           console.log(fileName)
           formData.append('files.picture', this.selectedFile, fileName)
           for(const pair of formData.entries()) {
