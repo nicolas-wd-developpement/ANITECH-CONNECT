@@ -88,7 +88,7 @@
                       v-show= "!stepOne"
                       v-model="tagNumber"
                       color="white"
-                      label="Numéro du colier"
+                      label="Tag number written on the medal"
                       required
                       :error-messages="tagErrors"
                       @input="$v.tagNumber.$touch()"
@@ -101,7 +101,7 @@
                       :items="species"
                       color="white"
                       item-text="name"
-                      label="Espece"
+                      label="Breed"
                     ></v-autocomplete>
                   </v-card-text>
                     <v-checkbox
@@ -148,7 +148,8 @@
                     :timeout="2000"
                     absolute
                     bottom
-                    left
+                    color="success"
+                    right
                   >
                     Your Tag is goind to be saved
                   </v-snackbar>
@@ -806,7 +807,6 @@ export default {
         onSubmit() {
           const formData = new FormData()
           const fileName = this.tagNumber + '.jpeg'
-          this.hasSaved = true
           console.log(fileName)
           formData.append('files.picture', this.selectedFile, fileName)
           for(const pair of formData.entries()) {
@@ -827,6 +827,7 @@ export default {
               password: this.password,
               picture: this.selectedFile
             }
+            this.hasSaved = true
             this.dataTag.data.breed = this.breed
             this.dataTag.data.mail = this.emailAddress
             this.dataTag.data.name = this.name
@@ -844,8 +845,13 @@ export default {
                 name: 'tag-id',
                 params: { id: tag.tagNumber }
               })
-            })
-            }
+            }).catch( () => {
+                // tag required does not exist
+                this.$router.push({
+                  name: 'errors'
+                  })
+                })
+        }
     },
 }
 </script>

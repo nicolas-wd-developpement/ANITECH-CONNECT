@@ -25,12 +25,6 @@
                 </v-app-bar>
 
                 <v-card-title class="white--text mt-8">
-                  <v-avatar size="100">
-                    <img
-                      alt="tagStore.tag.name"
-                      :src="tagStore.avatar"
-                    >
-                  </v-avatar>
                   <h3 class="ml-3">                   
                   </h3>
 
