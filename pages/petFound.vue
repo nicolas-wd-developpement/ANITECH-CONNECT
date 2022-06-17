@@ -47,6 +47,18 @@
               >
                 We are looking for the pet
               </v-snackbar>
+              <v-snackbar
+                v-model="hasError"
+                absolute
+                bottom
+                left
+                color="warning"
+                :timeout="10000"
+              >
+               We encountoured an error: {{errors}}
+               <p> please try later or contact us</p>
+               <v-btn @click="hasError= false"> Ok</v-btn>
+              </v-snackbar>
           </v-form>
          </v-card>
         <v-card black>
@@ -69,6 +81,8 @@ export default {
       }
   },
     data: () => ({
+    hasError: false,
+    errors:{},
     hasSearched: false,
     showPassword: false,
     collapseOnScroll: true,
@@ -136,13 +150,13 @@ export default {
           })
           if (this.hasSearched){
             this.hasSearched = false
-            throw new Error(`Tag not found ID : ${this.tag.tagNumber}`);
-          }
-        }).catch( response => {
-                        // tag required does not exist
-              this.$router.push({
+            this.$router.push({
                 name: 'tagIDError'
                 })
+          }
+        }).catch( error => {
+          this.hasError = true
+          this.errors =  error
         })
         }
     },
