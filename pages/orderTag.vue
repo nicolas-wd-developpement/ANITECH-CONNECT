@@ -6,10 +6,10 @@
                   <v-spacer></v-spacer>
               </v-col>
               <v-col cols="9" lg="12">
-                  <h1 class="display-1"> Order a tag </h1>
+                  <h1 class="display-1"> Order an anitech product</h1>
               </v-col>
               <v-col cols="3" lg="12">
-                  <v-spacer></v-spacer>
+                  
               </v-col>
           </v-row>
         </v-card>

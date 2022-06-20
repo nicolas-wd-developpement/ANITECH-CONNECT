@@ -101,13 +101,13 @@ export default {
     created() {
       this.tagStore.fetchTag(this.id)
       this.avatarUrl = this.tagStore.getPicture(this.id)
-      console.log('this avatarUrl à la création')
-     console.log(this.avatarUrl)
   },
   mounted(){
-     this.avatarUrl = this.tagStore.avatar
-     console.log('this avatarUrl au montage')
-     console.log(this.tagStore.url)
+      this.tagStore.fetchTag(this.id)
+      this.tagStore.getPicture(this.id)
+      console.log(" this.tagStore.data.url")
+      console.log(this.tagStore.data.url)
+      this.avatarUrl = this.tagStore.data.url
   }
 }
 </script>

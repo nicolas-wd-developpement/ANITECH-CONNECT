@@ -6,11 +6,8 @@
                 <v-btn text rounded to="/">Home</v-btn>
                 <v-btn text rounded to="/connectTag">Connect a new tag</v-btn>
                 <v-btn text rounded to="/petFound">You found a pet</v-btn>
-                <!-- 
-                <v-btn text rounded to="/dashBoard">Fonctionnement</v-btn>
-                <v-btn text rounded to="/loginUser">Se connecter</v-btn>
-                <v-btn text rounded to="/orderTag">Acheter un tag</v-btn>
-                -->
+                <v-btn text rounded to="/contactUs">Contact Us</v-btn>
+                <v-btn text rounded to="/orderTag">Order ANITECH products</v-btn>
             </v-app-bar>
     </v-main>
 </template>

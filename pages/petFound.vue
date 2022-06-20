@@ -81,7 +81,9 @@ export default {
       }
   },
     data: () => ({
+    tagNumberUpperCase:"",
     hasError: false,
+    dataPicture:{},
     errors:{},
     hasSearched: false,
     showPassword: false,
@@ -125,26 +127,28 @@ export default {
       },
         onSubmit() {
           this.hasSearched = true
-          EventService.getPicture(this.tag.tagNumber).then(response => {
+          this.tagNumberUpperCase = this.tag.tagNumber.toUpperCase()
+          console.log(this.tagNumberUpperCase)
+          EventService.getTag(this.tagNumberUpperCase).then(response => {
           this.dataPicture = response.data
           const arrayToBoucle = Object.entries(this.dataPicture.data)
           arrayToBoucle.forEach((element,index) => {
             const arrayData = Object.entries(this.dataPicture.data[index])
             const arrayDataAttributes = Object.entries(arrayData[1][1])
             // check if tag required exist
-            if (arrayDataAttributes[4][1]===this.tag.tagNumber) {
+            if (arrayDataAttributes[4][1]===this.tagNumberUpperCase) {
               this.hasSearched = false
               const tag = {
                 ...this.tag,
                 name: this.tag.name,
-                id: this.tag.tagNumber,
+                id: this.tagNumberUpperCase,
                 breed: this.tag.breed,
                 phoneNumber: this.tag.phoneNumber,
                 emailAddress: this.tag.emailAddress
               }
               this.$router.push({
                 name: 'tag-id',
-                params: { id: tag.tagNumber }
+                params: { id: tag.id}
                 })
             }
           })
@@ -168,7 +172,7 @@ export default {
     background-color: #fff!important;
     border-color: #fff!important;
     padding-top: 20px;
-    maring-top: 20px;
+    marging-top: 20px;
     height: 610px;
 }
 

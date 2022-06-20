@@ -3,6 +3,7 @@ import EventService from '../services/EventService.js'
 export const useTagStore = defineStore('TagStore',{
     state() {
         return {
+            token: {},
             tags: [],
             avatar:'',
             tag: {},
@@ -72,7 +73,7 @@ export const useTagStore = defineStore('TagStore',{
             dataTag: {
               "data": [
                 {
-                  "id": 1,
+                  "id": '',
                   "attributes": {
                     "breed": "",
                     "createdAt": "",
@@ -82,7 +83,8 @@ export const useTagStore = defineStore('TagStore',{
                     "publishedAt": "",
                     "tagId": "",
                     "tagnumber": "",
-                    "updatedAt": ""
+                    "updatedAt": "",
+                    "oderid": ""
                   },
                   "meta": {
                     "availableLocales": []
@@ -110,13 +112,17 @@ export const useTagStore = defineStore('TagStore',{
             })
         },
         getPicture(id) {
-          EventService.getPicture()
+          EventService.getPicture(id)
           .then(response => {
             this.dataPicture = response.data
-            this.avatar = this.getUrl(id)
-            console.log(this.getUrl(id))
-            console.log(this.avatar)
-            return this.avatar
+            // Research pictures' URLS
+            const arrayData = Object.entries(this.dataPicture.data[0])
+            const arrayDataAttributes = Object.entries(arrayData[1][1])
+            const arrayPictureAttributes = Object.entries(arrayDataAttributes[1][1])
+            const arrayPictureAttributesDetails = Object.entries(arrayPictureAttributes[0][1][0])
+            const PictureDetails = Object.entries(arrayPictureAttributesDetails[1][1])
+              this.avatar = 'https://strapi-nb0l.onrender.com' + PictureDetails[1][1]
+              return this.avatar
           })
         },
         uploadPicture(picture) {
@@ -124,38 +130,6 @@ export const useTagStore = defineStore('TagStore',{
         },
         createUser(user) {
           return  EventService.createUser(user)
-        },
-        getUrl(id){
-         // Research pictures' URLS
-         const arrayToBoucle = Object.entries(this.dataPicture.data)
-         arrayToBoucle.forEach((element,index) => {
-          const arrayData = Object.entries(this.dataPicture.data[index])
-          console.log('this.dataPicture.entries:')
-          console.log(arrayData)
-          const arrayDataAttributes = Object.entries(arrayData[1][1])
-          console.log('arrayDataAttributes:')
-          console.log(arrayDataAttributes)
-          const arrayPictureAttributes = Object.entries(arrayDataAttributes[10][1])
-          console.log('arrayPictureAttributesURL:')
-          console.log(arrayPictureAttributes)
-          const arrayPictureAttributesDetails = Object.entries(arrayPictureAttributes[0][1][0])
-          console.log("arrayPictureAttributesDetails[1][1]")
-          console.log(arrayPictureAttributesDetails)
-          const PictureDetails = Object.entries(arrayPictureAttributesDetails[1][1])
-          console.log("Current id")
-          console.log(arrayDataAttributes[4][1])
-          console.log("this.tagNumber")
-          console.log(id)
-          if (arrayDataAttributes[4][1]===id) {
-            console.log('url:')
-            console.log(PictureDetails[10][1])
-            this.url = 'https://strapi-nb0l.onrender.com' + PictureDetails[10][1]
-            console.log(this.url)
-            return this.url 
-          }
-         });
-            console.log(this.url)
-            return this.url
         },
         getTagById(id){
           // Research pictures' URLS
@@ -170,7 +144,13 @@ export const useTagStore = defineStore('TagStore',{
              }else return false
             })
           })
-         }
+         },
+        setToken(){
+          EventService.setToken().then(response => {
+            this.token = response.data
+          })
+          return this.token
+        }
     
     },
 })
