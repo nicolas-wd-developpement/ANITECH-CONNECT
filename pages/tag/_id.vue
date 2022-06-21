@@ -56,7 +56,7 @@
                   >
                     <div>
                       <div>
-                        <p> Please contact or phone <span style="font-weight:bolder"> {{tagStore.tag.phoneNumber}} </span> </p>
+                        <p> Please contact or phone <span style="font-weight:bolder"> <a :href="`tel:` + tagStore.tag.phoneNumber"> {{tagStore.tag.phoneNumber}} </a> </span> </p>
                       </div>
                     </div>
                   </v-timeline-item>
@@ -66,7 +66,7 @@
                   >
                     <div>
                       <div >
-                        <p> email adress <span style="font-weight:bolder">  <a href={{tagStore.tag.mail}}> {{tagStore.tag.mail}} </a> </span> </p>
+                        <p> email adress <span style="font-weight:bolder">  <a :href="`mailto:` + tagStore.tag.mail"> {{tagStore.tag.mail}} </a> </span> </p>
                       </div>
                     </div>
                   </v-timeline-item>
@@ -88,7 +88,8 @@ export default {
       }
     },
     data: () => ({
-      avatarUrl: ''
+      avatarUrl: '',
+      mailTo:''
     }),
        computed: {
     tag() {
@@ -105,9 +106,8 @@ export default {
   mounted(){
       this.tagStore.fetchTag(this.id)
       this.tagStore.getPicture(this.id)
-      console.log(" this.tagStore.data.url")
-      console.log(this.tagStore.data.url)
       this.avatarUrl = this.tagStore.data.url
+      this.mailTo = "mailto" + this.tagStore.tag.mail
   }
 }
 </script>

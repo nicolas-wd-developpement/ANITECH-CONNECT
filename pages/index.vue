@@ -90,12 +90,12 @@
                         </transition>
                         
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                         <v-spacer></v-spacer>
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                         <transition                  
                             appear
                             name="pawtransition"
@@ -111,9 +111,9 @@
                             </span>
                             </transition>
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                         <transition                  
                             appear
                             name="pawtransition"
@@ -130,10 +130,10 @@
                             </span>
                         </transition>
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
 
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                         <transition                  
                             appear
                             name="pawtransition"
@@ -150,14 +150,14 @@
                             </span> 
                     </transition>
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
  
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                     <transition                  
                         appear
                         name="pawtransition"
@@ -174,10 +174,10 @@
                         </span>
                     </transition>
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
 
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                     <transition                  
                         appear
                         name="pawtransition"
@@ -194,10 +194,10 @@
                         </span>
                     </transition>
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
     
                     </v-col>
-                    <v-col cols="0" lg="2">
+                    <v-col cols="2" lg="2">
                     <transition                  
                         appear
                         name="pawtransition"
