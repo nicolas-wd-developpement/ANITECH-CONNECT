@@ -35,6 +35,26 @@
        <a href="https://web-designers.fr">Developped by WD DEVELOPPEMENTS</a>
       </v-col>
     </v-row>
+      <v-row>
+        <v-col  cols="0" lg="2">
+
+        </v-col>
+        <v-col cols="12" lg="8" class="primary lighten-2 py-4 text-center white--text">
+            <v-btn
+              v-for="(link, index) in links"
+              :key="index"
+              text
+              rounded
+              class="my-2"
+              :to="link.url"
+            >
+            {{ link.label }}
+            </v-btn>
+        </v-col>
+        <v-col cols="0" lg="2">
+
+        </v-col>
+    </v-row>
   </v-main>
 </template>
 <script>
@@ -48,8 +68,8 @@
         url: '/dashBoard'
       },
       {
-        label:'Long in',
-        url: '/loginUser'
+        label:'Contact us',
+        url: '/contactUs'
       },
       {
         label:'Order',

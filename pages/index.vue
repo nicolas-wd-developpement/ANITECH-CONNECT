@@ -34,7 +34,7 @@
                         rounded 
                         to="/connectTag"
                         class="myBtn"
-                
+                        elevation="11"
                     >
                         Activate your tag
                     <v-icon>mdi-account-circle</v-icon>
@@ -65,6 +65,7 @@
                             rounded 
                             to="/petFound"
                             class="myBtn delay-1"
+                            elevation="11"
                     
                         >
                             found a pet

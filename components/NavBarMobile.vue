@@ -34,7 +34,7 @@
                                     <v-icon>mdi-home</v-icon>
                                 </a>
                             </v-list-item-icon>
-                            <v-list-item-title></v-list-item-title>
+                            <v-list-item-title><a href="/">Home</a></v-list-item-title>
                         </v-list-item>
 
                         <v-list-item>
@@ -43,7 +43,7 @@
                                 <v-icon>mdi-tag</v-icon>
                                 </v-list-item-icon>
                             </a>
-                            <v-list-item-title>Connect your tag</v-list-item-title>
+                            <v-list-item-title><a href="/connectTag">Connect your tag</a></v-list-item-title>
                         </v-list-item>
 
                         <v-list-item>
@@ -52,7 +52,7 @@
                                 <v-icon>mdi-dog</v-icon>
                                 </v-list-item-icon>
                              </a>
-                            <v-list-item-title>Pet Found</v-list-item-title>
+                            <v-list-item-title> <a href="/petFound">Pet Found</a></v-list-item-title>
                         </v-list-item>
                         <v-list-item>
                             <a href="/orderTag">
@@ -60,7 +60,7 @@
                                 <v-icon>mdi-cart</v-icon>
                                 </v-list-item-icon>
                              </a>
-                            <v-list-item-title>Order</v-list-item-title>
+                            <v-list-item-title><a href="/orderTag">Order</a> </v-list-item-title>
                         </v-list-item>
                         <v-list-item>
                             <a href="/contactUs">
@@ -68,7 +68,7 @@
                                 <v-icon>mdi-mail</v-icon>
                                 </v-list-item-icon>
                              </a>
-                            <v-list-item-title>Contact us</v-list-item-title>
+                            <v-list-item-title><a href="/contactUs">Contact us</a></v-list-item-title>
                         </v-list-item>
                         </v-list-item-group>
                     </v-list>

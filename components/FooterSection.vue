@@ -8,20 +8,7 @@
       no-gutters
 
       
-    > <!--
-      <v-btn
-        v-for="(link, index) in links"
-        :key="index"
-        text
-        rounded
-        class="my-2"
-        :to="link.url"
-      >
-       {{ link.label }}
-      </v-btn>
-
-      -->
-
+    > 
       <v-col
         class="primary lighten-2 py-4 text-center white--text"
         cols="12"
@@ -34,6 +21,22 @@
       >
        <a href="https://web-designers.fr">Developped by WD DEVELOPPEMENTS</a>
       </v-col>
+    </v-row>
+      <v-row>
+        <v-col        
+        class="primary lighten-2 py-4 text-center white--text"
+        cols="12">
+            <v-btn
+              v-for="(link, index) in links"
+              :key="index"
+              text
+              rounded
+              class="my-2"
+              :to="link.url"
+            >
+            {{ link.label }}
+            </v-btn>
+        </v-col>
     </v-row>
   </v-main>
 </template>
@@ -48,8 +51,8 @@
         url: '/dashBoard'
       },
       {
-        label:'Long in',
-        url: '/loginUser'
+        label:'Contact us',
+        url: '/contactUs'
       },
       {
         label:'Order',
