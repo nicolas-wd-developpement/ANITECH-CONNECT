@@ -54,6 +54,22 @@
                              </a>
                             <v-list-item-title>Pet Found</v-list-item-title>
                         </v-list-item>
+                        <v-list-item>
+                            <a href="/orderTag">
+                                <v-list-item-icon>
+                                <v-icon>mdi-item</v-icon>
+                                </v-list-item-icon>
+                             </a>
+                            <v-list-item-title>Order</v-list-item-title>
+                        </v-list-item>
+                        <v-list-item>
+                            <a href="/contactUs">
+                                <v-list-item-icon>
+                                <v-icon>mdi-mail</v-icon>
+                                </v-list-item-icon>
+                             </a>
+                            <v-list-item-title>Contact us</v-list-item-title>
+                        </v-list-item>
                         </v-list-item-group>
                     </v-list>
                     </v-navigation-drawer>
