@@ -1,7 +1,7 @@
 <template>
        <v-main >
                 <v-sheet
-                    height="800"
+                    height="2400"
                     class="overflow-hidden"
                     style="position: relative;"
 
@@ -57,7 +57,7 @@
                         <v-list-item>
                             <a href="/orderTag">
                                 <v-list-item-icon>
-                                <v-icon>mdi-item</v-icon>
+                                <v-icon>mdi-cart</v-icon>
                                 </v-list-item-icon>
                              </a>
                             <v-list-item-title>Order</v-list-item-title>

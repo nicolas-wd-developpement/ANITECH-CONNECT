@@ -105,4 +105,11 @@ export default {
 
 <style lang="scss" scoped>
 
+@media screen and (min-width: 992px){
+    .v-footer {
+        margin-top: 519px !important;
+    }
+}
+
+
 </style>

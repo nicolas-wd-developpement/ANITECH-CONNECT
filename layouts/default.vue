@@ -7,7 +7,12 @@
     <v-header v-else>
       <NavBarMobile></NavBarMobile>
     </v-header>
+    <v-footer v-if= "$vuetify.breakpoint.lgAndUp">
     <FooterSection></FooterSection>
+    </v-footer>
+    <v-footer v-else>
+      <FooterSectionMobile></FooterSectionMobile>
+    </v-footer>
   </v-app>
 </template>
 
@@ -71,7 +76,21 @@ h3 {
     height: 710px;
 }
 
-element.style {
+.element.style {
     padding: 20px 0px 20px;
 }
+
+.v-footer {
+    align-items: center;
+    display: flex;
+    flex: 0 1 auto !important;
+    flex-wrap: wrap;
+    padding: 0px 16px !important;
+    position: relative;
+    transition-duration: .2s;
+    transition-property: background-color,left,right;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    background-color: #6aaaff !important;
+}
+
 </style>

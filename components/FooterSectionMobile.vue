@@ -67,4 +67,7 @@
 .myFooter {
   height: 500px;
 }
+.v-footer {
+    margin-top: -1500px;
+}
 </style>

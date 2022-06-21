@@ -343,5 +343,11 @@ export default {
         transition-delay: 8.5s;
         animation-delay: 3s;
 }
+@media only screen and (max-width: 600px)  {
+    .v-footer {
+        margin-top: -1500px;
+    }
+
+}
 
 </style>

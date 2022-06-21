@@ -1,18 +1,18 @@
 <template>
-    <v-main height=600 pa-md-4 mx-lg-auto>
+    <v-main class="productPage" height=600 pa-md-4 mx-lg-auto>
         <v-card black>
           <v-row>
-              <v-col cols="3" lg="12">
+              <v-col cols="0" lg="2">
                   <v-spacer></v-spacer>
               </v-col>
-              <v-col cols="9" lg="12">
+              <v-col cols="12" lg="8">
                   <h1 class="display-1"> Order an anitech product</h1>
               </v-col>
-              <v-col cols="3" lg="12">
+              <v-col cols="0" lg="2">
               </v-col>
           </v-row>
           <v-row>
-            <v-col>
+            <v-col cols="12" lg="4">
                  <v-card
                     :loading="loading"
                     class="mx-auto my-12"
@@ -76,7 +76,7 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col>
+            <v-col cols="12" lg="4">
                  <v-card
                     :loading="loading"
                     class="mx-auto my-12"
@@ -139,7 +139,7 @@
                     </v-card-text>
                 </v-card>
             </v-col>
-            <v-col>
+             <v-col cols="12" lg="4">
                  <v-card
                     :loading="loading"
                     class="mx-auto my-12"
@@ -218,5 +218,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-application .white {
+    background-color: #fff!important;
+    border-color: #fff!important;
+    padding-top: 20px !important;
+    margin-top: 20px  !important;
+    height: 700px;
+}
 
 </style>

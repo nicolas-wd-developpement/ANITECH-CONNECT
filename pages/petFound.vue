@@ -176,4 +176,11 @@ export default {
     height: 610px;
 }
 
+@media only screen and (max-width: 600px)  {
+    .v-footer {
+        margin-top: -1500px;
+    }
+
+}
+
 </style>
