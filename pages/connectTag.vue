@@ -1,5 +1,10 @@
 <template>
-<v-main class="white" height="700" pa-md-4 mx-lg-auto>
+<v-main  style="padding: 0;">
+    <v-sheet
+  height="620"
+  class="overflow-hidden"
+  style="position: relative;"
+  >
       <v-card-text black>
         <v-row>
           <v-col cols="0" lg="2">
@@ -23,7 +28,7 @@
                 <!-- -->
                 <v-card
                   class="overflow-hidden"
-                  color="primary lighten-1"
+                  color="purple"
                   dark
                 >
                  <v-card-text>
@@ -51,18 +56,22 @@
                       @blur="$v.name.$touch()"
                       >
                     </v-text-field>
-                    <v-text-field
+                    <vue-tel-input-vuetify
                      v-show= "stepOne"
                       v-model="phoneNumber"
                       type="phone"
                       label="Phone Number"
-                      prepend-icon="mdi-phone"
                       required
+                      filled
+                      :preferred-countries="['fr', 'gb', 'it', 'es','de','nl','se']"
+                      :valid-characters-only="true"
+                      select-label="Code"
                       :error-messages="phoneNumberErrors"
                       @input="$v.phoneNumber.$touch()"
                       @blur="$v.phoneNumber.$touch()"
+                      @change="onInput"
                       > 
-                    </v-text-field>
+                    </vue-tel-input-vuetify>
                     <v-text-field
                       v-show= "stepOne"
                       v-model="emailAddress"
@@ -218,20 +227,25 @@
           </v-img>
         </v-col>
       </v-row>
+    </v-sheet>
   </v-main>
 </template>
 
 <script> 
 import { validationMixin } from 'vuelidate'
 import { required, maxLength, minLength, email } from 'vuelidate/lib/validators'
+import VueTelInputVuetify from "vue-tel-input-vuetify/lib/vue-tel-input-vuetify.vue"
 import { useTagStore } from '../store/TagStore'
 export default {
   name: 'IndexPage',
+  components: {
+     VueTelInputVuetify,
+  },
   mixins: [validationMixin],
     validations: {
       name: { required, maxLength: maxLength(10) },
       emailAddress: { required, email },
-      phoneNumber: { required, maxLength: maxLength(13), minLength: minLength(10)},
+      phoneNumber: { required, maxLength: maxLength(16), minLength: minLength(10)},
       tagNumber: { required, maxLength: maxLength(6) },
       select: { required },
       checkbox: {
@@ -256,6 +270,13 @@ export default {
       email: '',
       emailAddress: '',
       phoneNumber: '',
+      myPhone: '',
+      phone: {
+        number: '',
+        valid: false,
+        country: undefined,
+      },
+      prefix:'',
       tagNumber: '',
       select: null,
       selectedFile: null,
@@ -312,7 +333,7 @@ export default {
       nameErrors () {
         const errors = []
         if (!this.$v.name.$dirty) return errors
-        !this.$v.name.maxLength && errors.push('Name must be at most 15 characters long')
+        !this.$v.name.maxLength && errors.push('Name must be at most 16 characters long')
         !this.$v.name.required && errors.push('Name is required.')
         return errors
       },
@@ -320,7 +341,7 @@ export default {
         const errors = []
         if (!this.$v.phoneNumber.$dirty) return errors
         !this.$v.phoneNumber.minLength && errors.push('Phone number must be at minimum 10 digits')
-        !this.$v.phoneNumber.maxLength && errors.push('Phone number must be at maximum 15 digits')
+        !this.$v.phoneNumber.maxLength && errors.push('Phone number must be at maximum 16 digits')
         !this.$v.phoneNumber.required && errors.push('Phone is required.')
         return errors
       },
@@ -349,12 +370,17 @@ export default {
       },
     },
     methods: {
+        onInput(formattedNumber, { number, valid, country }) {
+        this.phone.number = number.international;
+        this.phone.valid = valid;
+        this.phone.country = country && country.name;
+        },
         handleFileUpload(event) {
           // this.selectedFile = event.target.files[0]
            this.selectedFile = event;
         },
         onSubmit() {
-           this.tagNumberUpperCase = this.tagNumber.toUpperCase()
+          this.tagNumberUpperCase = this.tagNumber.toUpperCase()
           const formData = new FormData()
           const fileName = this.tagNumberUpperCase + '.jpeg'
           formData.append('files.picture', this.selectedFile, fileName)
@@ -368,7 +394,7 @@ export default {
               id: this.tagNumberUpperCase,
               tagNumber: this.tagNumberUpperCase,
               breed: this.breed,
-              phoneNumber: this.phoneNumber,
+              phoneNumber: this.phone.number,
               emailAddress: this.emailAddress,
               oderid: this.oderid,
               picture: this.selectedFile
@@ -377,7 +403,7 @@ export default {
             this.dataTag.data.breed = this.breed
             this.dataTag.data.mail = this.emailAddress
             this.dataTag.data.name = this.name
-            this.dataTag.data.phoneNumber = this.phoneNumber
+            this.dataTag.data.phoneNumber = this.phone.number
             this.dataTag.data.tagId = this.tagNumberUpperCase
             this.dataTag.data.tagnumber = this.tagNumberUpperCase
             this.dataTag.data.oderId = this.oderId
@@ -490,5 +516,7 @@ form {
     }
 
 }
+
+
 
 </style>

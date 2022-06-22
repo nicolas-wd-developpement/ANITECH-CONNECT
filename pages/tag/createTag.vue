@@ -1,5 +1,5 @@
 <template>
-    <v-main height=600 pa-md-4 mx-lg-auto>
+    <v-main style="padding: 0;">>
         <v-row>
             <v-col>
                 <v-spacer></v-spacer>

@@ -51,7 +51,7 @@ export default {
 <style>
 h1 {
   text-align: center;
-  margin-top: -20px;
+  padding: 20px;
 
 }
 
@@ -71,9 +71,6 @@ h3 {
 .v-application .white {
     background-color: #fff!important;
     border-color: #fff!important;
-    padding-top: 20px !important;
-    margin-top: 20px  !important;
-    height: 710px;
 }
 
 .element.style {
@@ -81,16 +78,11 @@ h3 {
 }
 
 .v-footer {
-    align-items: center;
-    display: flex;
-    flex: 0 1 auto !important;
-    flex-wrap: wrap;
-    padding: 0px 16px !important;
-    position: relative;
-    transition-duration: .2s;
-    transition-property: background-color,left,right;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
     background-color: #2196F3 !important;
+}
+
+element.style {
+    padding: 0px 0px 0px !important;
 }
 
 </style>

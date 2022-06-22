@@ -1,64 +1,70 @@
 <template>
-<v-main height=600 pa-md-4 mx-lg-auto>
-  <v-form v-model="valid" @submit.prevent="createUser">
-    <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="firstname"
-            :rules="nameRules"
-            :counter="10"
-            label="First name"
-            required
-          ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="lastname"
-            :rules="nameRules"
-            :counter="10"
-            label="Last name"
-            required
-          ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          md="4"
-        >
-          <v-text-field
-            v-model="email"
-            :rules="emailRules"
-            label="E-mail"
-            required
-          ></v-text-field>
-          <v-text-field
-            v-model="password"
-            :rules="passwordRules"
-            label="E-mail"
-            required
-          ></v-text-field>
-
-        </v-col>
-      </v-row>
-    </v-container>
-        <v-btn
-        type="submit"
-        :disabled="!valid"
-        color="success"
-        class="mr-4"
-        @click="validate"
+<v-main style="padding: 0;">
+    <v-sheet
+    height="620"
+    class="overflow-hidden"
+    style="position: relative;"
     >
-      Validate
-    </v-btn>
-  </v-form>
+    <v-form v-model="valid" @submit.prevent="createUser">
+      <v-container>
+        <v-row>
+          <v-col
+            cols="12"
+            md="4"
+          >
+            <v-text-field
+              v-model="firstname"
+              :rules="nameRules"
+              :counter="10"
+              label="First name"
+              required
+            ></v-text-field>
+          </v-col>
+
+          <v-col
+            cols="12"
+            md="4"
+          >
+            <v-text-field
+              v-model="lastname"
+              :rules="nameRules"
+              :counter="10"
+              label="Last name"
+              required
+            ></v-text-field>
+          </v-col>
+
+          <v-col
+            cols="12"
+            md="4"
+          >
+            <v-text-field
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
+              required
+            ></v-text-field>
+            <v-text-field
+              v-model="password"
+              :rules="passwordRules"
+              label="E-mail"
+              required
+            ></v-text-field>
+
+          </v-col>
+        </v-row>
+      </v-container>
+          <v-btn
+          type="submit"
+          :disabled="!valid"
+          color="success"
+          class="mr-4"
+          @click="validate"
+      >
+        Validate
+      </v-btn>
+    </v-form>
+  </v-sheet>
 </v-main>
 </template>
 
@@ -107,10 +113,7 @@ import { useTagStore } from '../store/TagStore'
             this.user.username =  this.firstname  + this.lastname
             this.user.email = this.email
             this.user.password = this.password
-            console.log(this.user)
             this.tagStore.createUser(this.user).then((response)=>{
-                console.log('User profile', response.data.user);
-                console.log('User token', response.data.jwt);
             }).catch(error => {
                 console.log('An error occurred:', error.response);
       });

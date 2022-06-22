@@ -1,5 +1,10 @@
 <template>
-<v-main class="white" height=600 pa-md-4 mx-lg-auto>
+<v-main class="white" height=600 style="padding: 0;">
+  <v-sheet
+  height="620"
+  class="overflow-hidden"
+  style="position: relative;"
+  >
         <v-card-text black class="firstBlock">
           <v-row>
               <v-col cols="0" lg="2">
@@ -14,7 +19,7 @@
           </v-row>
         </v-card-text>
         <!-- lOGIN modal-->
-        <v-card width="400" class="mx-auto mt-5" color="primary" elevation="11">
+        <v-card width="400" class="mx-auto mt-5" color="deep-orange" elevation="11">
           <v-form @submit.prevent="onSubmit">
             <!-- -->
                 <v-text-field
@@ -66,9 +71,9 @@
               <h3 class="display-1"> </h3>
           </v-card-title>
         </v-card>
-      </v-main>
+    </v-sheet>
+  </v-main>
 </template>
-
 <script>
 import { useTagStore } from '../store/TagStore'
 import EventService from '../services/EventService.js'

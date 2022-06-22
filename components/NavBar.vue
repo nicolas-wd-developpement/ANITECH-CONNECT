@@ -1,6 +1,6 @@
 <template>
-       <v-main > 
-            <v-app-bar app color="primary">
+       <v-main  class="pa-ma-0" >
+            <v-app-bar app color="primary" class="pa-ma-0">
                 <v-toolbar-title> <v-btn class="title" to="/">ANITECH CONNECT your dogs</v-btn></v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn text rounded to="/">Home</v-btn>

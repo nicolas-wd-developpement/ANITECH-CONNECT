@@ -1,5 +1,10 @@
 <template>
-  <v-main class="white" height=600 pa-md-4 mx-lg-auto>
+  <v-main class="white" height=600 style="padding: 0;">
+      <v-sheet
+    height="620"
+    class="overflow-hidden"
+    style="position: relative;"
+    >
         <v-card-text>
                 <h1>The tag id you entered is not saved in our database.</h1>
         </v-card-text>
@@ -28,9 +33,9 @@
               <v-col cols="0" lg="2"></v-col>
           </v-row>
         </v-container>
-    </v-main>
+    </v-sheet>
+  </v-main>
 </template>
-
 <script>
 export default {
     data: () => ({

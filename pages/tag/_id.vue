@@ -1,6 +1,6 @@
 <template>
-    <v-main height="700" pa-md-4 mx-lg-auto> 
-          <v-container margin-top="20px">
+    <v-main style="padding: 0;"> 
+          <v-container>
           <v-row justify="space-around">
             <v-card width="600">
               <v-img

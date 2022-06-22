@@ -1,5 +1,10 @@
 <template>
-    <v-main class="white" height="700" pa-md-4 mx-lg-auto>
+    <v-main style="padding: 0;">
+        <v-sheet
+        height="620"
+        class="overflow-hidden"
+        style="position: relative;"
+        >
             <v-card-text class="firstBlock">
                 <v-row>
                     <v-col cols="0" lg="2">
@@ -217,6 +222,7 @@
                     </v-col>
                 </v-row>
             </v-card-text>
+        </v-sheet>
     </v-main>
 </template>
 
@@ -343,6 +349,10 @@ export default {
 .delay-9 {
         transition-delay: 8.5s;
         animation-delay: 3s;
+}
+
+element.style {
+    padding: 0px 0px 0px !important;
 }
 
 </style>
