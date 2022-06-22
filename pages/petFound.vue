@@ -14,7 +14,7 @@
           </v-row>
         </v-card-text>
         <!-- lOGIN modal-->
-        <v-card width="400" class="mx-auto mt-5" color="primary">
+        <v-card width="400" class="mx-auto mt-5" color="primary" elevation="11">
           <v-form @submit.prevent="onSubmit">
             <!-- -->
                 <v-text-field
@@ -128,7 +128,6 @@ export default {
         onSubmit() {
           this.hasSearched = true
           this.tagNumberUpperCase = this.tag.tagNumber.toUpperCase()
-          console.log(this.tagNumberUpperCase)
           EventService.getTag(this.tagNumberUpperCase).then(response => {
           this.dataPicture = response.data
           const arrayToBoucle = Object.entries(this.dataPicture.data)
@@ -172,13 +171,13 @@ export default {
     background-color: #fff!important;
     border-color: #fff!important;
     padding-top: 20px;
-    marging-top: 20px;
+    margin-top: 20px;
     height: 610px;
 }
 
 @media only screen and (max-width: 600px)  {
     .v-footer {
-        margin-top: -1500px;
+        margin-top: -2000px;
     }
 
 }

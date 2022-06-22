@@ -7,7 +7,7 @@
     <v-header v-else>
       <NavBarMobile></NavBarMobile>
     </v-header>
-    <v-footer v-if= "$vuetify.breakpoint.lgAndUp">
+    <v-footer  v-if= "$vuetify.breakpoint.lgAndUp">
     <FooterSection></FooterSection>
     </v-footer>
     <v-footer v-else>
@@ -90,7 +90,7 @@ h3 {
     transition-duration: .2s;
     transition-property: background-color,left,right;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
-    background-color: #6aaaff !important;
+    background-color: #2196F3 !important;
 }
 
 </style>

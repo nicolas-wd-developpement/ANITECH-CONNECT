@@ -63,12 +63,12 @@
                             <v-list-item-title><a href="/orderTag">Order</a> </v-list-item-title>
                         </v-list-item>
                         <v-list-item>
-                            <a href="/contactUs">
+                            <a href="/dashBoard">
                                 <v-list-item-icon>
-                                <v-icon>mdi-mail</v-icon>
+                                <v-icon>mdi-network-strength-1</v-icon>
                                 </v-list-item-icon>
                              </a>
-                            <v-list-item-title><a href="/contactUs">Contact us</a></v-list-item-title>
+                            <v-list-item-title><a href="/dashBoard">How it works</a></v-list-item-title>
                         </v-list-item>
                         </v-list-item-group>
                     </v-list>

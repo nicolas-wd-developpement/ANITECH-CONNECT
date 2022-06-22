@@ -18,7 +18,7 @@
               <v-spacer></v-spacer>
           </v-col>
           <v-col cols="12" lg="8">
-            <v-card width="400" pa-md-4 class="mx-auto mt-5">
+            <v-card width="400" pa-md-4 class="mx-auto mt-5" elevation="11">
               <v-form @submit.prevent="onSubmit">
                 <!-- -->
                 <v-card
@@ -101,15 +101,68 @@
                       label="Breed"
                     ></v-text-field>
                   </v-card-text>
-                    <v-checkbox
-                      v-show= "!stepOne"
-                      v-model="checkbox"
-                      :error-messages="checkboxErrors"
-                      label="Do you agree?"
-                      required
-                      @change="$v.checkbox.$touch()"
-                      @blur="$v.checkbox.$touch()"
-                    ></v-checkbox>
+                  <v-checkbox
+                    v-show= "!stepOne"
+                    v-model="checkbox"
+                    :error-messages="checkboxErrors"
+                    label="Accept terms of services"
+                    required
+                    @change="$v.checkbox.$touch()"
+                    @blur="$v.checkbox.$touch()"
+                  >
+                  </v-checkbox>
+                  <v-dialog
+                        v-model="dialog"
+                        width="500"
+                      >
+                    <template #activator="{ on, attrs }">
+                      <v-btn
+                        v-show= "!stepOne"
+                        raised
+                        rounded
+                        text
+                        v-bind="attrs"
+                        plain
+                        tile
+                        x-small
+                        v-on="on"
+
+                      >
+                      <p class="tos">*terms of use</p>
+                      </v-btn>
+                    </template>
+                    <v-card>
+                      <v-card-title class="text-h5 grey lighten-2">
+                        Terms of services
+                      </v-card-title>
+
+                      <v-card-text>
+                        Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+
+                        By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+
+                        You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.
+
+                        Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies 
+                        and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+                        By accessing or using the Service You agree to provide your contact details to any users that search your assigned tag details.
+                        Import and Retail international dac cannot be taken responsible for any usage of the contact details by third party.
+                      </v-card-text>
+
+                      <v-divider></v-divider>
+
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn
+                          color="primary"
+                          text
+                          @click="dialog = false"
+                        >
+                          I accept
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
 
                   <v-card-actions>
                       <v-btn class="stepBtn" @click="stepOne= !stepOne">
@@ -198,6 +251,7 @@ export default {
       token:{},
       loading: false,
       stepOne: true,
+      dialog: false,
       name: '',
       email: '',
       emailAddress: '',
@@ -429,7 +483,12 @@ form {
     overflow: hidden;
     margin: 10px;
 }
-.custom-file-upload {
+
+@media only screen and (max-width: 600px)  {
+    .v-footer {
+        margin-top: -1500px;
+    }
 
 }
+
 </style>
