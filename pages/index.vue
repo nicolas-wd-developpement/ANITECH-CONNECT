@@ -1,5 +1,5 @@
 <template>
-    <v-main class="white" height=600 pa-md-4 mx-lg-auto>
+    <v-main class="white" height="700" pa-md-4 mx-lg-auto>
             <v-card-text class="firstBlock">
                 <v-row>
                     <v-col cols="0" lg="2">
@@ -343,12 +343,6 @@ export default {
 .delay-9 {
         transition-delay: 8.5s;
         animation-delay: 3s;
-}
-@media only screen and (max-width: 600px)  {
-    .v-footer {
-        margin-top: -1500px;
-    }
-
 }
 
 </style>

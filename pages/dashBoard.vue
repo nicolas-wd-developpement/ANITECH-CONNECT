@@ -1,4 +1,5 @@
 <template>
+<v-main heigth="700">
   <v-stepper v-model="e1">
     <v-stepper-header>
       <v-stepper-step
@@ -99,6 +100,7 @@
       </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
+</v-main>
 </template>
 
 <script>

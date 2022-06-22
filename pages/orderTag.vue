@@ -1,5 +1,5 @@
 <template>
-    <v-main class="productPage" height=600 pa-md-4 mx-lg-auto>
+    <v-main class="productPage" pa-md-4 mx-lg-auto>
         <v-card black>
           <v-row>
               <v-col cols="0" lg="2">
@@ -221,9 +221,7 @@ export default {
 .v-application .white {
     background-color: #fff!important;
     border-color: #fff!important;
-    padding-top: 20px !important;
-    margin-top: 20px  !important;
-    height: 700px;
+    
 }
 
 </style>

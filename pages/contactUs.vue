@@ -1,5 +1,5 @@
 <template>
-    <v-main class="white" height=1400 pa-md-4 mx-lg-auto>
+    <v-main class="white" height="700" pa-md-4 mx-lg-auto>
         <v-card black>
             <v-row>
                 <v-col cols="0" lg="2">
@@ -68,11 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 
-@media screen and (min-width: 992px){
-    .v-footer {
-        margin-top: 519px !important;
-    }
-}
+
 
 
 </style>

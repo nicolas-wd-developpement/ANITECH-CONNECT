@@ -1,5 +1,5 @@
 <template>
-    <v-main height=600 pa-md-4 mx-lg-auto> 
+    <v-main height="700" pa-md-4 mx-lg-auto> 
           <v-container margin-top="20px">
           <v-row justify="space-around">
             <v-card width="600">

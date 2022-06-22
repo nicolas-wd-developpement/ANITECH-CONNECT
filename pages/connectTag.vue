@@ -1,5 +1,5 @@
 <template>
-<v-main class="white" height=600 pa-md-4 mx-lg-auto>
+<v-main class="white" height="700" pa-md-4 mx-lg-auto>
       <v-card-text black>
         <v-row>
           <v-col cols="0" lg="2">
