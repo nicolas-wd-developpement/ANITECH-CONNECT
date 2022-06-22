@@ -8,13 +8,11 @@
             <v-card-text class="firstBlock">
                 <v-row>
                     <v-col cols="0" lg="2">
-                        <v-spacer></v-spacer>
                     </v-col>
                     <v-col cols="12" lg="8">
                         <h1>Online identification</h1>
                     </v-col>
                     <v-col cols="0" lg="2">
-                        <v-spacer></v-spacer>
                     </v-col>
                 </v-row>
             </v-card-text>
@@ -64,7 +62,7 @@
                   
                     >
                         <v-btn
-                            color="warning"
+                            color="deep-orange"
                             height="150"
                             width=" 200"
                             rounded 
@@ -110,7 +108,7 @@
                             <span class="delay-3">
                                 <v-icon
                                     class="paw"
-                                    color= "primary"
+                                    color= "purple"
                                     size=25
                                     >mdi-paw
                                 </v-icon>
@@ -149,7 +147,7 @@
                             <span class="delay-7">                       
                                 <v-icon
                                     class="paw"
-                                    color= "primary"
+                                    color= "deep-orange"
                                     size=65
                                     >mdi-paw
                                 </v-icon>
@@ -173,7 +171,7 @@
                         <span class="delay-4">     
                             <v-icon
                                 class="paw"
-                                color= "primary"
+                                color= "pink"
                                 size=35
                                 >mdi-paw
                             </v-icon>
@@ -193,7 +191,7 @@
                         <span class="delay-6">     
                             <v-icon
                                 class="paw"
-                                color= "primary"
+                                color= "light-green accent-4"
                                 size=55
                                 >mdi-paw
                             </v-icon>
@@ -213,7 +211,7 @@
                         <span class="delay-8">  
                             <v-icon
                                 class="paw "
-                                color= "primary"
+                                color= "lime"
                                 size=75
                                 >mdi-paw
                             </v-icon>

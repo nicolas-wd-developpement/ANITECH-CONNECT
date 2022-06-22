@@ -7,20 +7,14 @@
   >
       <v-card-text black>
         <v-row>
-          <v-col cols="0" lg="2">
-              <v-spacer></v-spacer>
-          </v-col>
-          <v-col cols="12" lg="8">
+          <v-col cols="12" lg="12">
              <h1> Activate your tag</h1>
-          </v-col>
-          <v-col cols="0" lg="2">
           </v-col>
         </v-row>
       </v-card-text>
         <!-- lOGIN modal-->
                 <v-row>
           <v-col cols="0" lg="2">
-              <v-spacer></v-spacer>
           </v-col>
           <v-col cols="12" lg="8">
             <v-card width="400" pa-md-4 class="mx-auto mt-5" elevation="11">
@@ -510,11 +504,8 @@ form {
     margin: 10px;
 }
 
-@media only screen and (max-width: 600px)  {
-    .v-footer {
-        margin-top: -1500px;
-    }
-
+.v-form {
+  padding-top: -10px;
 }
 
 
