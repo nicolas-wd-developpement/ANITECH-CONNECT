@@ -51,8 +51,9 @@
                       >
                     </v-text-field>
                     <vue-tel-input-vuetify
-                     v-show= "stepOne"
+                      v-show= "stepOne"
                       v-model="phoneNumber"
+                      mode="national"
                       type="phone"
                       label="Phone Number"
                       required
@@ -61,11 +62,12 @@
                       :valid-characters-only="true"
                       select-label="Code"
                       :error-messages="phoneNumberErrors"
-                      @input="$v.phoneNumber.$touch()"
+                      @change="$v.phoneNumber.$touch()"
                       @blur="$v.phoneNumber.$touch()"
-                      @change="onInput"
+                      @input="onInput"
                       > 
                     </vue-tel-input-vuetify>
+                    {{phone.number}}
                     <v-text-field
                       v-show= "stepOne"
                       v-model="emailAddress"
