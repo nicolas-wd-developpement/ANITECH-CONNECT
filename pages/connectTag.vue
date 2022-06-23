@@ -1,7 +1,7 @@
 <template>
 <v-main  style="padding: 0;">
     <v-sheet
-  height="620"
+  height="650"
   class="overflow-hidden"
   style="position: relative;"
   >
@@ -67,7 +67,6 @@
                       @input="onInput"
                       > 
                     </vue-tel-input-vuetify>
-                    {{phone.number}}
                     <v-text-field
                       v-show= "stepOne"
                       v-model="emailAddress"

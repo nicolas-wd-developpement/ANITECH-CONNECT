@@ -1,7 +1,7 @@
 <template>
     <v-main style="padding: 0;">
         <v-sheet
-        height="620"
+        height="750"
         class="overflow-hidden"
         style="position: relative;"
         >
@@ -351,6 +351,12 @@ export default {
 
 element.style {
     padding: 0px 0px 0px !important;
+}
+
+@media screen and (min-width: 992px) {
+  .v-footer  {
+    padding-top: -130px;
+  }
 }
 
 </style>

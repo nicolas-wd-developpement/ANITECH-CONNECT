@@ -1,7 +1,7 @@
 <template>
   <v-main class="white" height=600 style="padding: 0;">
       <v-sheet
-    height="620"
+    height="650"
     class="overflow-hidden"
     style="position: relative;"
     >
