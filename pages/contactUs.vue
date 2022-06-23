@@ -12,7 +12,7 @@
                     </v-col>
                     <v-col cols="12" lg="8">
                         <v-card-title>
-                            <h1> Contact us</h1>
+                            <h1> {{$t("contactUs")}}</h1>
                         </v-card-title>
                     </v-col>
                     <v-col cols="0" lg="2">
@@ -28,10 +28,10 @@
                         <v-card
                         elevation="11">
                             <v-card-title>
-                                <h2> For technical issues or question</h2>
+                                <h2> {{$t('techIssue')}}</h2>
                             </v-card-title>
                             <v-card-text>
-                                <p> Please send an email to:</p>
+                                <p> {{$t("sendUsMail")}}</p>
                             </v-card-text>
                             <v-card-text>
                                 <a href="mailto:">nicolasblond@web-designers.fr</a>
@@ -42,10 +42,10 @@
                         <v-card
                         elevation="11">
                             <v-card-title>
-                                <h2> For any other question</h2>
+                                <h2> {{$t('otherQuestions')}}</h2>
                             </v-card-title>
                             <v-card-text>
-                                <p> Please send an email to:</p>
+                                <p> {{$t("sendUsMail")}}</p>
                             </v-card-text>
                             <v-card-text>
                                 <a href="mailto:">ir.sales@outlook.com</a>

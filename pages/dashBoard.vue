@@ -11,7 +11,7 @@
           :complete="e1 > 1"
           step="1"
         >
-          Collect your information
+          {{$t("collectInfo")}}
         </v-stepper-step>
 
         <v-divider></v-divider>
@@ -20,13 +20,13 @@
           :complete="e1 > 2"
           step="2"
         >
-          Register your tag in our dataBase
+          {{$t("registerTag")}}
         </v-stepper-step>
 
         <v-divider></v-divider>
 
         <v-stepper-step step="3">
-          Your pet contact details are accessible online
+          {{$t("petOnline")}}
         </v-stepper-step>
       </v-stepper-header>
 
@@ -38,9 +38,9 @@
             height="200px"
           >
             <ul>
-              <li> Get your order ID from Amazon or ANITECH web shop</li>
-              <li> Note the Tag number written on the medal</li>
-              <li> define a phone number, adress email, and picture of your dog</li>
+              <li> {{$t("getYourOrder")}}</li>
+              <li> {{$t("noteTag")}}</li>
+              <li> {{$t("checkStatus")}}</li>
             </ul>
           </v-card>
 
@@ -48,13 +48,13 @@
             color="primary"
             @click="e1 = 2"
           >
-            Continue
+            {{$t("continue")}}
           </v-btn>
 
           <v-btn
           @click="e1 = 1"
           >
-            Back
+            {{$t("back")}}
           </v-btn>
         </v-stepper-content>
 
@@ -65,7 +65,7 @@
             height="200px"
           >
             <ul>
-              <li> Fill in the form in the area Connect a new Tag</li>
+              <li> {{$t("fillInForm")}}</li>
             </ul>
           </v-card>
 
@@ -73,13 +73,13 @@
             color="primary"
             @click="e1 = 3"
           >
-            Continue
+            {{$t("continue")}}
           </v-btn>
 
           <v-btn
           @click="e1 = 1"
           >
-            Back
+            {{$t("back")}}
           </v-btn>
         </v-stepper-content>
 
@@ -90,9 +90,9 @@
             height="200px"
           >
             <ul>
-              <li> Your Tag ID is now saved in our database</li>
-              <li> You can verify it by searching your tag in the area You found a pet</li>
-              <li> Research your Tag Id number in our dataBase and see your pet online</li>
+              <li> {{("tagSavedHowToProceed1")}}</li>
+              <li> {{("tagSavedHowToProceed2")}}</li>
+              <li> {{("tagSavedHowToProceed3")}}</li>
             </ul>
           
           </v-card>
@@ -100,7 +100,7 @@
           <v-btn
           @click="e1 = 2"
           >
-            Back
+            {{$t("back")}}
           </v-btn>
         </v-stepper-content>
       </v-stepper-items>

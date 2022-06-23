@@ -8,7 +8,7 @@
       <v-card-text black>
         <v-row>
           <v-col cols="12" lg="12">
-             <h1> Activate your tag</h1>
+             <h1>{{$t("tagActivate")}}</h1>
           </v-col>
         </v-row>
       </v-card-text>
@@ -29,7 +29,7 @@
                     <v-file-input
                       v-show= "stepOne"
                       id="file-upload"
-                      label="Pet photo"
+                      :label="$t('petPhotoLabel')"
                       type="file"
                       name="image"
                       filled
@@ -42,7 +42,7 @@
                     <v-text-field
                      v-show= "stepOne"
                       v-model="name" 
-                      label="Pet Name" 
+                      :label="$t('petNameLabel')"
                       prepend-icon="mdi-account-circle"
                       :error-messages="nameErrors"
                       required
@@ -55,7 +55,7 @@
                       v-model="phoneNumber"
                       mode="national"
                       type="phone"
-                      label="Phone Number"
+                      :label="$t('phoneNumberLabel')"
                       required
                       filled
                       :preferred-countries="['fr', 'gb', 'it', 'es','de','nl','se']"
@@ -71,7 +71,7 @@
                       v-show= "stepOne"
                       v-model="emailAddress"
                       type="email"
-                      label="email"
+                      :label="$t('emailLabel')"
                       prepend-icon="mdi-email"
                       :error-messages="emailErrors"
                       required
@@ -83,14 +83,14 @@
                       v-show= "stepOne" 
                       v-model="oderId"
                       :type="text"
-                      label="Order id"
+                      :label="$t('orderId')"
                       prepend-icon="mdi-lock">
                     </v-text-field>
                       <v-text-field
                       v-show= "!stepOne"
                       v-model="tagNumber"
                       color="white"
-                      label="Tag number written on the medal"
+                      :label="$t('tagNumberLabel')"
                       required
                       :error-messages="tagErrors"
                       @input="$v.tagNumber.$touch()"
@@ -102,14 +102,14 @@
                       v-model="breed"
                       color="white"
                       item-text="name"
-                      label="Breed"
+                      :label="$t('breed')"
                     ></v-text-field>
                   </v-card-text>
                   <v-checkbox
                     v-show= "!stepOne"
                     v-model="checkbox"
                     :error-messages="checkboxErrors"
-                    label="Accept terms of services"
+                    :label="$t('acceptTosLabel')"
                     required
                     @change="$v.checkbox.$touch()"
                     @blur="$v.checkbox.$touch()"
@@ -137,20 +137,11 @@
                     </template>
                     <v-card>
                       <v-card-title class="text-h5 grey lighten-2">
-                        Terms of services
+                        {{$t("tos")}}
                       </v-card-title>
 
                       <v-card-text>
-                        Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
-
-                        By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
-
-                        You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.
-
-                        Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies 
-                        and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
-                        By accessing or using the Service You agree to provide your contact details to any users that search your assigned tag details.
-                        Import and Retail international dac cannot be taken responsible for any usage of the contact details by third party.
+                        {{$t("tosDetails")}}
                       </v-card-text>
 
                       <v-divider></v-divider>
@@ -162,7 +153,7 @@
                           text
                           @click="dialog = false"
                         >
-                          I accept
+                          {{$t('accept')}}
                         </v-btn>
                       </v-card-actions>
                     </v-card>
@@ -170,8 +161,8 @@
 
                   <v-card-actions>
                       <v-btn class="stepBtn" @click="stepOne= !stepOne">
-                        <span v-show="stepOne"> Next </span>
-                        <span v-show="!stepOne"> Back </span>
+                        <span v-show="stepOne"> {{$t("next")}} </span>
+                        <span v-show="!stepOne"> {{$t("back")}} </span>
                       </v-btn>
                     <v-spacer></v-spacer>
                     <v-tex v-if="!checkbox  || !tagNumber || !emailAddress || !phoneNumber   ">
@@ -181,7 +172,7 @@
                       type="submit"
                       disabled
                       >
-                      Save
+                      {{$t("save")}}
                       </v-btn>
                     </v-tex>
                     <v-text v-else>
@@ -193,7 +184,7 @@
                       @click="onSubmit, loader = 'loading'"
                       @change="$v.checkbox.$touch()"
                       >
-                      Save
+                      {{$t("save")}}
                       </v-btn>
                     </v-text>
                   </v-card-actions>
@@ -205,7 +196,7 @@
                     color="success"
                     right
                   >
-                    Your Tag is goind to be saved
+                    {{$t("tagSaved")}}
                   </v-snackbar>
                 </v-card>
               </v-form>
@@ -261,6 +252,7 @@ export default {
       loading: false,
       stepOne: true,
       dialog: false,
+      petPhotoLabel: '',
       name: '',
       email: '',
       emailAddress: '',
@@ -364,6 +356,9 @@ export default {
         this.loader = null
       },
     },
+   // mounted(){
+   //   this.petPhotoLabel = "$t('petPhotoLabel')"
+   // },
     methods: {
         onInput(formattedNumber, { number, valid, country }) {
         this.phone.number = number.international;

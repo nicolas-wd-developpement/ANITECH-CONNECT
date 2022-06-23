@@ -61,8 +61,44 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/composition-api/module',
     '@pinia/nuxt',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/i18n'
   ],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js',
+        name: 'English'
+      },
+      {
+        code: 'es',
+        file: 'es-ES.js',
+        name: 'Español'
+      },
+      {
+        code: 'fr',
+        file: 'fr-FR.js',
+        name: 'Français'
+      },
+      {
+        code: 'it',
+        file: 'it-IT.js',
+        name: 'Italiano'
+      },
+      {
+        code: 'de',
+        file: 'de-DE.js',
+        name: 'Deutsch'
+      },
+      
+    ],
+    lazy: true,
+    langDir: 'lang/',
+    defaultLocale: 'en',
+    strategy: "prefix",
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

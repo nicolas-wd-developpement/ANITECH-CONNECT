@@ -11,7 +11,7 @@
                   <v-spacer></v-spacer>
               </v-col>
               <v-col cols="12" lg="8">
-                  <h1 class="display-1"> Pet found</h1>
+                  <h1 class="display-1">{{$t("petFound")}}</h1>
               </v-col>
               <v-col cols="0" lg="2">
                   <v-spacer></v-spacer>
@@ -27,7 +27,7 @@
                 :disabled="!isEditing"
                 prepend-icon="mdi-account-circle"
                 color="white"
-                label="Enter the tag number written on the medal Ex: ABC123"
+                :label="$t('tagNumberLabel')"
               ></v-text-field>
               <v-row justify="space-between">
                 <v-col></v-col>
@@ -38,7 +38,7 @@
                   type="submit"
                   @click="save, onSubmit"
                   >
-                   Research
+                   {{$t("research")}}
                   </v-btn>
                  </v-col>
                 <v-col></v-col>
@@ -60,8 +60,8 @@
                 color="warning"
                 :timeout="10000"
               >
-               We encountoured an error: {{errors}}
-               <p> please try later or contact us</p>
+               {{$t("weHaveError")}} {{errors}}
+               <p> {{$t("tryAgain")}}</p>
                <v-btn @click="hasError= false"> Ok</v-btn>
               </v-snackbar>
           </v-form>

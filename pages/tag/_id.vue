@@ -33,7 +33,7 @@
 
               <v-card-text>
                 <div class="font-weight-bold ml-8 mb-2">
-                  Contact details
+                  {{$t("contactDetails")}}
                 </div>
 
                 <v-timeline
@@ -46,7 +46,7 @@
                   >
                     <div>
                       <div>
-                        <p> My name is {{ tagStore.tag.name}}, I am a {{tagStore.tag.breed}}</p>
+                        <p> {{$t("myNameIs")}} {{ tagStore.tag.name}}, {{$t("iAmA")}} {{tagStore.tag.breed}}</p>
                       </div>
                     </div>
                   </v-timeline-item>
@@ -56,7 +56,7 @@
                   >
                     <div>
                       <div>
-                        <p> Please contact or phone <span style="font-weight:bolder"> <a :href="`tel:` + tagStore.tag.phoneNumber"> {{tagStore.tag.phoneNumber}} </a> </span> </p>
+                        <p> {{$t("contactOwner")}} <span style="font-weight:bolder"> <a :href="`tel:` + tagStore.tag.phoneNumber"> {{tagStore.tag.phoneNumber}} </a> </span> </p>
                       </div>
                     </div>
                   </v-timeline-item>
@@ -66,7 +66,7 @@
                   >
                     <div>
                       <div >
-                        <p> email adress <span style="font-weight:bolder">  <a :href="`mailto:` + tagStore.tag.mail"> {{tagStore.tag.mail}} </a> </span> </p>
+                        <p> {{$t("emailAdress")}} <span style="font-weight:bolder">  <a :href="`mailto:` + tagStore.tag.mail"> {{tagStore.tag.mail}} </a> </span> </p>
                       </div>
                     </div>
                   </v-timeline-item>

@@ -25,7 +25,7 @@
                 <v-icon 
                   size="48px"
                   >
-                  {{ icon.label }}
+                  {{ $t( icon.label ) }} 
                 </v-icon>
             </v-btn>
           </v-card-text>
@@ -45,7 +45,7 @@
             class="my-2  white--text"
             :to="link.url"
           >
-          {{ link.label }}
+          {{ $t(link.label) }}
           </v-btn>
         </v-col>
         <v-col cols="0" lg="2">
@@ -77,7 +77,7 @@
         <v-col cols="0" lg="2"></v-col>
         <v-col cols="12" lg="8">
           <v-card-text class="white--text">
-            Application developped by — <strong> <a href="https://web-designers.fr"> www.web-designers.fr</a></strong>
+            {{$t("appDeveloppedBy")}} — <strong> <a href="https://web-designers.fr"> www.web-designers.fr</a></strong>
           </v-card-text>
         </v-col>
         <v-col cols="0" lg="2"></v-col>
@@ -89,31 +89,31 @@
   export default {
     data: () => ({
       links: [ {
-        label:'Home',
+        label:'home',
         url: '/'
       },{
-        label:'Who we are',
+        label:'whoWeAre',
         url: '/whoWeAre'
       },
       {
-        label:'Contact us',
+        label:'contactUs',
         url: '/contactUs'
       },
       {
-        label:'Order',
+        label:'order',
         url: '/orderTag'
       },
       {
-        label:'I found a pet',
+        label:'foundAPet',
         url: '/petFound'
       },
             {
-        label:'How it works',
+        label:'howItWorks',
         url: '/dashBoard'
       },
 
            {
-        label:'Terms of services',
+        label:'tos',
         url: '/termOfUse'
       },
       

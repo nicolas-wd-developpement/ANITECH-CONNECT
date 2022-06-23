@@ -6,7 +6,7 @@
                   <v-spacer></v-spacer>
               </v-col>
               <v-col cols="12" lg="8">
-                  <h1 class="display-1"> Order an anitech product</h1>
+                  <h1 class="display-1"> {{$t("orderAnitechProduct")}}</h1>
               </v-col>
               <v-col cols="0" lg="2">
               </v-col>
@@ -32,7 +32,7 @@
                     src="https://strapi-nb0l.onrender.com/uploads/anitech_dog_leash_3be6c42db2.jpg"
                     ></v-img>
 
-                    <v-card-title>Dog leash for large dogs</v-card-title>
+                    <v-card-title>{{$t("dogLeash")}}</v-card-title>
 
                     <v-card-text>
                     <v-row
@@ -54,15 +54,15 @@
                     </v-row>
 
                     <div class="my-4 text-subtitle-1">
-                        $ • Antipull dog leash
+                        $ • {{("antiPull")}}
                     </div>
 
-                    <div>5 YEAR WARRANTY Anti-Traction Large Dog Lead (6 FT) Safety Belt + Shock Absorption + Reflective Stitching + Double Handle</div>
+                    <div>{{$t("warranty")}}</div>
                     </v-card-text>
 
                     <v-divider class="mx-4"></v-divider>
 
-                    <v-card-title>Order from our web site</v-card-title>
+                    <v-card-title>{{$t("orderFromUs")}}</v-card-title>
 
                     <v-card-text>
                     <v-chip-group
@@ -70,7 +70,7 @@
                         active-class="deep-purple accent-4 white--text"
                         column
                     >
-                        <v-chip><a href="https://anitech-solution.com" target="_blank" rel="noopener">Shipped by amazon</a></v-chip>
+                        <v-chip><a href="https://anitech-solution.com" target="_blank" rel="noopener">{{$t("shippedBy")}}</a></v-chip>
 
                     </v-chip-group>
                     </v-card-text>
@@ -96,7 +96,7 @@
                     src="https://strapi-nb0l.onrender.com/uploads/anitech_dog_car_cover_5d6737a61e.jpg"
                     ></v-img>
 
-                    <v-card-title>Car cover for dogs</v-card-title>
+                    <v-card-title>{{$t("cover")}}</v-card-title>
 
                     <v-card-text>
                     <v-row
@@ -118,15 +118,15 @@
                     </v-row>
 
                     <div class="my-4 text-subtitle-1">
-                        $ •Heavy duty car cover
+                        $ {{$t("coverDetails")}}
                     </div>
 
-                    <div>ANITECH Car Rear Seat Covers for dogs - Waterproof with anti split Cover (137 * 147cm).</div>
+                    <div>{{$t("coverDetailsPlus")}}</div>
                     </v-card-text>
 
                     <v-divider class="mx-4"></v-divider>
 
-                    <v-card-title>Order from our web shop</v-card-title>
+                    <v-card-title>{{$t("orderFromUs")}}</v-card-title>
 
                     <v-card-text>
                     <v-chip-group
@@ -134,7 +134,7 @@
                         active-class="deep-purple accent-4 white--text"
                         column
                     >
-                        <v-chip><a href="https://anitech-solution.com" target="_blank" rel="noopener">Shipped by amazon</a></v-chip>
+                        <v-chip><a href="https://anitech-solution.com" target="_blank" rel="noopener">{{$t("shippedBy")}}</a></v-chip>
                     </v-chip-group>
                     </v-card-text>
                 </v-card>
@@ -181,15 +181,15 @@
                     </v-row>
 
                     <div class="my-4 text-subtitle-1">
-                        $ • Anitech connect Tag
+                        $ {{$t("tag")}}
                     </div>
 
-                    <div>Connect your tag to anitech connect and get your pet safe</div>
+                    <div>{{$t("tagDetails")}}</div>
                     </v-card-text>
 
                     <v-divider class="mx-4"></v-divider>
 
-                    <v-card-title>Order anitech connect from our web site</v-card-title>
+                    <v-card-title>{{$t("orderFromUs")}}</v-card-title>
 
                     <v-card-text>
                     <v-chip-group
@@ -197,7 +197,7 @@
                         active-class="deep-purple accent-4 white--text"
                         column
                     >
-                         <v-chip><a href="https://anitech-solution.com" target="_blank" rel="noopener">Shipped by amazon</a></v-chip>
+                         <v-chip><a href="https://anitech-solution.com" target="_blank" rel="noopener">{{$t("shippedBy")}}</a></v-chip>
                     </v-chip-group>
                     </v-card-text>
                 </v-card>

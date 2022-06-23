@@ -46,6 +46,11 @@ export default {
       title: 'Vuetify.js',
     }
   },
+  computed: {
+  availableLocales () {
+    return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+  }
+}
 }
 </script>
 <style>

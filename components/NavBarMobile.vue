@@ -30,45 +30,45 @@
                         >
                         <v-list-item>
                             <v-list-item-icon>
-                                <a href="/">
+                                <a :to="localePath('/home')">
                                     <v-icon>mdi-home</v-icon>
                                 </a>
                             </v-list-item-icon>
-                            <v-list-item-title><a href="/">Home</a></v-list-item-title>
+                            <v-list-item-title><a :to="localePath('/home')">{{$t("home")}}</a></v-list-item-title>
                         </v-list-item>
 
                         <v-list-item>
-                            <a href="/connectTag">                           
+                            <a :to="localePath('/connectTag')">                           
                                 <v-list-item-icon>
                                 <v-icon>mdi-tag</v-icon>
                                 </v-list-item-icon>
                             </a>
-                            <v-list-item-title><a href="/connectTag">Connect your tag</a></v-list-item-title>
+                            <v-list-item-title><a :to="localePath('/connectTag')">{{$t("connectYourTag")}}</a></v-list-item-title>
                         </v-list-item>
 
                         <v-list-item>
-                            <a href="/petFound">
+                            <a :to="localePath('/petFound')">
                                 <v-list-item-icon>
                                 <v-icon>mdi-dog</v-icon>
                                 </v-list-item-icon>
                              </a>
-                            <v-list-item-title> <a href="/petFound">Pet Found</a></v-list-item-title>
+                            <v-list-item-title> <a :to="localePath('/petFound')">{{$t("petFoundNav")}}</a></v-list-item-title>
                         </v-list-item>
                         <v-list-item>
-                            <a href="/orderTag">
+                            <a :to="localePath('/orderTag')">
                                 <v-list-item-icon>
                                 <v-icon>mdi-cart</v-icon>
                                 </v-list-item-icon>
                              </a>
-                            <v-list-item-title><a href="/orderTag">Order</a> </v-list-item-title>
+                            <v-list-item-title><a :to="localePath('/orderTag')">{{$t("orderNav")}}</a> </v-list-item-title>
                         </v-list-item>
                         <v-list-item>
-                            <a href="/dashBoard">
+                            <a :to="localePath('/dashBoard')">
                                 <v-list-item-icon>
                                 <v-icon>mdi-network-strength-1</v-icon>
                                 </v-list-item-icon>
                              </a>
-                            <v-list-item-title><a href="/dashBoard">How it works</a></v-list-item-title>
+                            <v-list-item-title><a :to="localePath('/dashBoard')">{{$t("howItWorks")}}</a></v-list-item-title>
                         </v-list-item>
                         </v-list-item-group>
                     </v-list>
