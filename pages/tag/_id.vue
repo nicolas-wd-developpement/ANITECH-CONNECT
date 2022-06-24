@@ -46,7 +46,7 @@
                   >
                     <div>
                       <div>
-                        <p> {{$t("myNameIs")}} <span style="font-weight:500;">{{ tagStore.tag.name}}</span>, {{$t("iAmA")}} <span style="font-weight:500;">{{tagStore.tag.breed}}</span></p>
+                        <p> {{$t("myNameIs")}} <span style="font-weight:600;">{{ tagStore.tag.name}}</span>, {{$t("iAmA")}} <span style="font-weight:600;">{{tagStore.tag.breed}}</span></p>
                       </div>
                     </div>
                   </v-timeline-item>
