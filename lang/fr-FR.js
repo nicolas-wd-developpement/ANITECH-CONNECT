@@ -61,8 +61,9 @@ export default {
     phoneNumberLabel: "téléphone",
     emailLabel: "Email",
     orderId: "Numéro de commande",
-    tagNumberLabel: "Identifiant écrit sur votre médaille (ex ABC132)",
+    tagNumberLabel: "Identifiant écrit sur votre médaille (ex ABC123)",
     breed: "Race",
     acceptTosLabel: "J'accepte les conditions d'utilisations",
     accept: "J'accepte",
+    tagNotFound: "Le numéro de médaille que vous avez entré n'est pas présent dans notre base de donnée."
 }

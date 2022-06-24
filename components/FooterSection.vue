@@ -43,7 +43,7 @@
             text
             rounded
             class="my-2  white--text"
-            :to="link.url"
+            :to= "localePath(link.url)"
           >
           {{ $t(link.label) }}
           </v-btn>
@@ -87,10 +87,10 @@
 </template>
 <script>
   export default {
-    data: () => ({
+    data: () => ({           
       links: [ {
         label:'home',
-        url: '/'
+        url: '/home'
       },{
         label:'whoWeAre',
         url: '/whoWeAre'
@@ -150,7 +150,10 @@
         }
         return attrs
       },
-    },
+      availableLocales () {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+      }
+    }
   }
 </script>
 <style scoped>

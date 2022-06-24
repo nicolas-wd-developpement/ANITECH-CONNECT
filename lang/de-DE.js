@@ -61,8 +61,9 @@ export default {
         phoneNumberLabel: "Telefonnummer",
         emailLabel: "E-Mail",
         orderId: "Bestell-ID",
-        tagNumberLabel: "Tag-Nummer auf der Medaille (ex ABC132)",
+        tagNumberLabel: "Tag-Nummer auf der Medaille (ex ABC123)",
         breed: "Rasse",
         acceptTosLabel: "Nutzungsbedingungen akzeptieren",
         accept: "Ich akzeptiere",
+        tagNotFound: "Die eingegebene Tag-ID ist nicht in unserer Datenbank gespeichert."
 }

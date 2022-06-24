@@ -57,6 +57,7 @@ export default {
 h1 {
   text-align: center;
   padding: 20px;
+  line-height: 1.2em;
 
 }
 

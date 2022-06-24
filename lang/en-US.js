@@ -61,11 +61,11 @@ export default {
     phoneNumberLabel: "Phone number",
     emailLabel: "Email",
     orderId: "Order ID",
-    tagNumberLabel: "Tag number written on the medal (ex ABC132)",
+    tagNumberLabel: "Tag number written on the medal (ex ABC123)",
     breed: "Breed",
     acceptTosLabel: "Accept terms of services",
     accept: "I accept",
-
+    tagNotFound: "The tag id you entered is not saved in our database.",
 
 
 }

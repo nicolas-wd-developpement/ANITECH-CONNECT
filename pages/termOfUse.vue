@@ -1,15 +1,10 @@
 <template>
     <div>
         <v-tex>
-            <h1> Terms of use</h1>
+            <h1>{{$t('tos')}}</h1>
         </v-tex>
 
         <v-text>
-            <p>ANITECH CONNECT is a web service owned by Import and Retail International Designated Activity. IR International is registered in Ireland <span itemprop="description">Number 594247.</span></p>
-            <p>Company address:</p>
-            <p>Import and Retail international DAC</p>
-            <p>Unit 3D North Point House, North Point Business Park, New Mallow Road</p>
-            <p>T23 AT2P Cork Ireland/p></p>
             <p>The application <a href="https://www.anitech-connect.com">www.anitech-connect.com</a>&nbsp;<span>&nbsp;</span>of Import and Retail international constitutes a work protected in Ireland by the Intellectual Property Code, and abroad by international conventions on copyright. Violation of one of the copyrights is an offense of counterfeiting punishable, under the terms of article L.335-2 of the Intellectual Property Code, by 2 years' imprisonment and a fine of €150,000.</p>
             <p>Protection of personal data and privacy policy</p>
             <p>Visitors or customers of the site <a href="https://www.anitech-connect.com">www.anitech-connect.com </a>&nbsp; have the right to access, modify, rectify and delete data concerning them at any time. The processing of personal and/or personal information by Import and Retail International on the site</p>

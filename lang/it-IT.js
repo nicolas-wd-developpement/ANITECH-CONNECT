@@ -11,7 +11,7 @@ export default {
         connectyourTag: "Collega il tuo tag",
         petFoundNav: "Animale trovato",
         orderNav: "Ordine",
-        foundAPet: "Trovato un animale domestico",
+        foundAPet: "Trovato",
         activateYourTagAndGetYourPetSafe: "Attiva il tuo tag ANITECH metti al sicuro il tuo cane",
         appDeveloppedBy: "Applicazione sviluppata da",
         whoWeAre: "Chi siamo",
@@ -61,8 +61,9 @@ export default {
         phoneNumberLabel: "Numero di telefono",
         emailLabel: "Email",
         orderId: "ID ordine",
-        tagNumberLabel: "Numero di tag scritto sulla medaglia (ex ABC132)",
+        tagNumberLabel: "Numero di tag scritto sulla medaglia (ex ABC123)",
         breed: "Razza",
         acceptTosLabel: "Accetta i termini dei servizi",
         accept: "Accetto",
+        tagNotFound: "L'ID tag che hai inserito non è salvato nel nostro database."
 }

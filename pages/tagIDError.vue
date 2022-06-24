@@ -6,7 +6,7 @@
     style="position: relative;"
     >
         <v-card-text>
-                <h1>The tag id you entered is not saved in our database.</h1>
+                <h1>{{$t('tagNotFound')}}</h1>
         </v-card-text>
         <v-spacer></v-spacer>
         <v-container>
