@@ -22,7 +22,7 @@
                 <!-- -->
                 <v-card
                   class="overflow-hidden"
-                  color="purple"
+                  color="info"
                   dark
                 >
                  <v-card-text>

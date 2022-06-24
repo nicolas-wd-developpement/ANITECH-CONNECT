@@ -62,7 +62,7 @@
                   
                     >
                         <v-btn
-                            color="deep-orange"
+                            color="warning"
                             height="150"
                             width=" 200"
                             rounded 
