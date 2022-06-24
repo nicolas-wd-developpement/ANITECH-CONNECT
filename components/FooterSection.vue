@@ -16,16 +16,36 @@
         <v-col cols="12" lg="8">
           <v-card-text>
             <v-btn
-              v-for="(icon, index) in icons"
-              :key="index"
               class="mx-4 white--text"
               icon
-              :to="icon.url"
+              href='https://www.facebook.com/anitechsolution'
             >
                 <v-icon 
                   size="48px"
                   >
-                  {{ $t( icon.label ) }} 
+                  mdi-facebook
+                </v-icon>
+            </v-btn>
+            <v-btn
+              class="mx-4 white--text"
+              icon
+              href='https://instagram.com'
+            >
+                <v-icon 
+                  size="48px"
+                  >
+                 mdi-instagram 
+                </v-icon>
+            </v-btn>
+                     <v-btn
+              class="mx-4 white--text"
+              icon
+              href='https://www.youtube.com/watch?v=GwXwiZzQvv4&t=2s'
+            >
+                <v-icon 
+                  size="48px"
+                  >
+                 mdi-youtube 
                 </v-icon>
             </v-btn>
           </v-card-text>
@@ -77,7 +97,7 @@
         <v-col cols="0" lg="2"></v-col>
         <v-col cols="12" lg="8">
           <v-card-text class="white--text">
-            {{$t("appDeveloppedBy")}} — <strong> <a href="https://web-designers.fr"> www.web-designers.fr</a></strong>
+            {{$t("appDeveloppedBy")}} — <a style="font-weight:500; color:black;" href="https://web-designers.fr" > www.web-designers.fr</a>
           </v-card-text>
         </v-col>
         <v-col cols="0" lg="2"></v-col>
