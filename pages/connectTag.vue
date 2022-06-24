@@ -400,12 +400,12 @@ export default {
             formData.append('data', JSON.stringify(this.dataTag.data));
             this.tagStore.createTag(formData).then(() => {
               this.$router.push({
-                path: this.localePath('/tag') + '/' + tag.tagNumber 
+                path: this.localePath('/tag') + '/' + tag.tagNumber
               })
             }).catch( () => {
                 // tag required does not exist
                 this.$router.push({
-                  name: 'errors'
+                  path: this.localePath('/error')
                   })
                 })
         }

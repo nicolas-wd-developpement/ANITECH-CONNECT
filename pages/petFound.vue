@@ -163,7 +163,7 @@ export default {
           if (this.hasSearched){
             this.hasSearched = false
             this.$router.push({
-                name: 'tagIDError'
+                path: this.localePath('/tagIDError')
                 })
           }
         }).catch( error => {
