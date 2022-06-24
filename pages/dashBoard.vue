@@ -90,9 +90,9 @@
             height="200px"
           >
             <ul>
-              <li> {{("tagSavedHowToProceed1")}}</li>
-              <li> {{("tagSavedHowToProceed2")}}</li>
-              <li> {{("tagSavedHowToProceed3")}}</li>
+              <li> {{$t("tagSavedHowToProceed1")}}</li>
+              <li> {{$t("tagSavedHowToProceed2")}}</li>
+              <li> {{$t("tagSavedHowToProceed3")}}</li>
             </ul>
           
           </v-card>

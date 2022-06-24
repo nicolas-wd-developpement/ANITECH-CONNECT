@@ -55,7 +55,7 @@ export default {
     research: "Rechercher",
     weHaveError: "Nous avons rentrés une erreur:",
     tryAgain: "Merci d'essayer à nouveau plus tard ou de contacter notre support",
-    language: "Langages",
+    language: "Langues",
     petPhotoLabel: " Photo de l'animal",
     petNameLabel: "Nom",
     phoneNumberLabel: "téléphone",
