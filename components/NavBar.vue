@@ -10,7 +10,7 @@
                 <v-btn text rounded :to="localePath('/orderTag')">{{$t("orderAnitechProduct")}}</v-btn>
                 <div class="text-center">
                     <v-menu offset-y>
-                    <template v-slot:activator="{ on, attrs }">
+                    <template #activator="{ on, attrs }">
                         <v-btn
                         color="primary"
                         dark

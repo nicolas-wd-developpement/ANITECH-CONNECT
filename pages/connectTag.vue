@@ -346,6 +346,9 @@ export default {
         !this.$v.emailAddress.required && errors.push('E-mail is required')
         return errors
       },
+      availableLocales () {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+        }
       
     },
      watch: {
@@ -356,9 +359,6 @@ export default {
         this.loader = null
       },
     },
-   // mounted(){
-   //   this.petPhotoLabel = "$t('petPhotoLabel')"
-   // },
     methods: {
         onInput(formattedNumber, { number, valid, country }) {
         this.phone.number = number.international;
@@ -400,8 +400,7 @@ export default {
             formData.append('data', JSON.stringify(this.dataTag.data));
             this.tagStore.createTag(formData).then(() => {
               this.$router.push({
-                name: 'tag-id',
-                params: { id: tag.tagNumber }
+                path: this.localePath('/tag') + '/' + tag.tagNumber 
               })
             }).catch( () => {
                 // tag required does not exist

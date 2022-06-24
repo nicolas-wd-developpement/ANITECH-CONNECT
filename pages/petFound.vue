@@ -117,6 +117,11 @@ export default {
           phoneNumber:null
         }
   }),
+  computed: {
+    availableLocales () {
+        return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+        }
+    },
    methods: {
       customFilter (item, queryText, itemText) {
         const textOne = item.name.toLowerCase()
@@ -151,8 +156,7 @@ export default {
                 emailAddress: this.tag.emailAddress
               }
               this.$router.push({
-                name: 'tag-id',
-                params: { id: tag.id}
+                path: this.localePath('/tag') + '/' + tag.id
                 })
             }
           })
