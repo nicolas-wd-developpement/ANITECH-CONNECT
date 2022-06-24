@@ -21,7 +21,7 @@ export default {
         contactDetails: "Datos de contacto",
         myNameIs: "Mi nombre es",
         iAmA: "Soy un:",
-        contactOwner: "Por favor, póngase en contacto o teléfono",
+        contactOwner: "Número de teléfono",
         emailAdress: "dirección de correo electrónico",
         tosDetails: "Su acceso y uso del Servicio está condicionado a Su aceptación y cumplimiento de estos Términos y condiciones. Estos Términos y condiciones se aplican a todos los visitantes, usuarios y otras personas que acceden o usan el Servicio. Al acceder o usar el Servicio Usted acepta estar sujeto a estos Términos y condiciones. Si no está de acuerdo con alguna parte de estos Términos y condiciones, entonces no podrá acceder al Servicio. Usted declara que es mayor de 18 años. La Compañía no permite que los menores de 18 años usar el Servicio. Su acceso y uso del Servicio también está condicionado a Su aceptación y cumplimiento de la Política de Privacidad de la Compañía. Nuestra Política de Privacidad describe Nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de Su información personal cuando Usted usar la Aplicación o el Sitio web y le informa sobre Sus derechos de privacidad y cómo la ley lo protege. Lea detenidamente Nuestra Política de privacidad antes de usar Nuestro Servicio. Al acceder o usar el Servicio e Usted acepta proporcionar sus datos de contacto a cualquier usuario que busque los detalles de su etiqueta asignada. Import and Retail international dac no se hace responsable del uso de los datos de contacto por parte de terceros.",
         next: "Siguiente",
