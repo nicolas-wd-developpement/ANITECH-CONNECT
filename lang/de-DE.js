@@ -65,5 +65,11 @@ export default {
         breed: "Rasse",
         acceptTosLabel: "Nutzungsbedingungen akzeptieren",
         accept: "Ich akzeptiere",
-        tagNotFound: "Die eingegebene Tag-ID ist nicht in unserer Datenbank gespeichert."
+        tagNotFound: "Die eingegebene Tag-ID ist nicht in unserer Datenbank gespeichert.",
+        whoWeAreDetailed: "ANITECH CONNECT ist ein Webdienst von Import and Retail International Designated Activity. IR International ist in Irland unter der Nummer 594247 registriert.",
+        companyAddress: "Firmenanschrift:",
+        anitechConnectTos: "Die Web-App ANITECH CONNECT von Import and Retail International stellt ein Werk dar, das in Irland durch das Gesetz über geistiges Eigentum und im Ausland durch internationale Übereinkommen zum Urheberrecht geschützt ist Artikel L.335-2 des Gesetzes über geistiges Eigentum, mit einer Freiheitsstrafe von 2 Jahren und einer Geldstrafe von 150.000 € Schutz personenbezogener Daten und Datenschutzrichtlinien Besucher oder Kunden der Website www.anitech-connect.com haben das Recht auf Zugang, sie betreffende Daten jederzeit ändern, berichtigen und löschen Die Verarbeitung personenbezogener und/oder personenbezogener Daten durch Import and Retail International auf der Website Um mit der Änderung, dem Zugriff oder der Löschung fortzufahren, senden Sie bitte eine E-Mail an ir.sales@outlook.com. Der Zweck der ANITECH CONNECT-Anwendung besteht darin, die Kontaktdaten des Besitzers einer ANITECH CONNECT-Marke zu veröffentlichen, damit er kontaktiert werden kann und so sein Haustier finden kann al DAC kann nicht für den Missbrauch durch Dritte verantwortlich gemacht werden. Link zu anderen Websites:",
+        thirdPartyNotOwned: " Websites von Drittanbietern, die direkt oder indirekt mit den nachstehenden Websites verlinkt sind, unterliegen nicht der Verantwortung von Import and Retail International.",
+        thirdPartyOwned: " Websites von Drittanbietern, die direkt oder indirekt mit den folgenden Websites verlinkt sind, unterliegen der Verantwortung von Import and Retail International."        
+
 }

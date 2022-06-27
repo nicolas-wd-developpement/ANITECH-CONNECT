@@ -42,7 +42,7 @@ export default {
     fillInForm: "Remplissez le formulaire dans la zone Connecter un nouveau Tag",
     tagSavedHowToProceed1: "Votre médaille est maintenant enregistrée dans notre base de données",
     tagSavedHowToProceed2: "Vous pouvez le vérifier en recherchant votre médaillon dans la zone Vous avez trouvé un animal de compagnie",
-    tagSavedHowToProceed3: "Recherchez votre numéro d'identification d'étiquette dans notre base de données et voyez votre animal de compagnie en ligne.",
+    tagSavedHowToProceed3: "Recherchez votre numéro d'identification d'étiquette dans notre base de données et découvrez votre animal de compagnie en ligne.",
     dogLeash: "Laisse pour gros chien",
     antiPull: "Laisse anti traction",
     warranty: "GARANTIE 5 ANS Laisse Anti-Traction Grand Chien (6 FT) Ceinture de Sécurité + Absorption des Chocs + Coutures Réfléchissantes + Double Poignée",
@@ -65,5 +65,10 @@ export default {
     breed: "Race",
     acceptTosLabel: "J'accepte les conditions d'utilisations",
     accept: "J'accepte",
-    tagNotFound: "Le numéro de médaille que vous avez entré n'est pas présent dans notre base de donnée."
+    tagNotFound: "Le numéro de médaille que vous avez entré n'est pas présent dans notre base de donnée.",
+    whoWeAreDetailed: "ANITECH CONNECT est un service Web appartenant à Import and Retail International Designated Activity. IR International est enregistrée en Irlande sous le numéro 594247.",
+    companyAddress: "Adresse de la société:",
+    anitechConnectTos: "L'application web ANITECH CONNECT d'Import and Retail international constitue une œuvre protégée en Irlande par le Code de la Propriété Intellectuelle, et à l'étranger par les conventions internationales sur le droit d'auteur. La violation de l'un des droits d'auteur est un délit de contrefaçon passible, aux termes de la l'article L.335-2 du Code de la Propriété Intellectuelle, de 2 ans d'emprisonnement et de 150 000 € d'amende Protection des données personnelles et politique de confidentialité Les visiteurs ou clients du site www.anitech-connect.com disposent d'un droit d'accès, modifier, rectifier et supprimer à tout moment les données les concernant Le traitement des informations personnelles et/ou nominatives par Import and Retail International sur le site Pour procéder à la modification, l'accès ou la suppression veuillez envoyer un email à ir.sales@outlook.com. L'application ANITECH CONNECT a pour but de rendre publiques les coordonnées du propriétaire d'une médaille ANITECH CONNECT, pour lui permettre d'être recontacté et ainsi retrouver son animal de compagnie. al DAC ne peut être tenu responsable de toute utilisation abusive par des tiers. Lien vers d'autres sites Web :",
+    thirdPartyNotOwned: " Les sites tiers liés directement ou indirectement au(x) site(s) ci-dessous ne relèvent pas de la responsabilité d'Import and Retail international.",
+    thirdPartyOwned: " Les sites tiers liés directement ou indirectement au(x) site(s) ci-dessous sont sous la responsabilité d'Import and Retail international."
 }

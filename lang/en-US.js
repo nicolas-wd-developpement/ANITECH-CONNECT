@@ -66,6 +66,11 @@ export default {
     acceptTosLabel: "Accept terms of services",
     accept: "I accept",
     tagNotFound: "The tag id you entered is not saved in our database.",
+    whoWeAreDetailed: "ANITECH CONNECT is a web service owned by Import and Retail International Designated Activity. IR International is registered in Ireland Number 594247.",
+    companyAddress: "Company address:",
+    anitechConnectTos: "The web app ANITECH CONNECT of Import and Retail international constitutes a work protected in Ireland by the Intellectual Property Code, and abroad by international conventions on copyright. Violation of one of the copyrights is an offense of counterfeiting punishable, under the terms of article L.335-2 of the Intellectual Property Code, by 2 years' imprisonment and a fine of €150,000. Protection of personal data and privacy policy Visitors or customers of the site www.anitech-connect.com have the right to access, modify, rectify and delete data concerning them at any time. The processing of personal and/or personal information by Import and Retail International on the site To proceed with modify, access or delete please send an email to ir.sales@outlook.com. The purpose of the ANITECH CONNECT application is to make public the contact details of the owner of an ANITECH CONNECT tag, to allow them to be contacted and thus find their pet. Import and retail International DAC cannot be held responsible for any misuse by third parties. Link to other web sites:",
+    thirdPartyNotOwned: " Third-party sites linked directly or indirectly to the site(s) below Is not under the responsabilty of Import and Retail international.",
+    thirdPartyOwned: " Third-party sites linked directly or indirectly to the site(s) below is under the responsabilty of Import and Retail international."
 
 
 }

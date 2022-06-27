@@ -65,5 +65,10 @@ export default {
         breed: "Raza",
         acceptTosLabel: "Aceptar términos de servicios",
         accept: "Acepto",
-        tagNotFound: "La identificación de la etiqueta que ingresó no está guardada en nuestra base de datos."
+        tagNotFound: "La identificación de la etiqueta que ingresó no está guardada en nuestra base de datos.",
+        whoWeAreDetailed: "ANITECH CONNECT es un servicio web propiedad de Import and Retail International Designated Activity. IR International está registrada en Irlanda con el número 594247.",
+        companyAddress: "Dirección de la empresa:",
+        anitechConnectTos: "La aplicación web ANITECH CONNECT de Import and Retail international constituye una obra protegida en Irlanda por el Código de Propiedad Intelectual, y en el extranjero por convenciones internacionales sobre derechos de autor. La violación de uno de los derechos de autor es un delito de falsificación punible, según los términos de artículo L.335-2 del Código de Propiedad Intelectual, con 2 años de prisión y multa de 150.000 € Protección de datos personales y política de privacidad Los visitantes o clientes del sitio www.anitech-connect.com tienen derecho a acceder, modificar, rectificar y eliminar los datos que les conciernen en cualquier momento El procesamiento de información personal y/o personal por parte de Import and Retail International en el sitio Para proceder a modificar, acceder o eliminar, envíe un correo electrónico a ir.sales@outlook.com. El objetivo de la aplicación ANITECH CONNECT es hacer públicos los datos de contacto del propietario de una etiqueta ANITECH CONNECT, para permitirle ser contactado y así encontrar a su mascota. al DAC no se hace responsable del mal uso por parte de terceros. Enlace a otros sitios web:",
+        thirdPartyNotOwned: " Los sitios de terceros vinculados directa o indirectamente a los sitios a continuación no están bajo la responsabilidad de Import and Retail International.",
+        thirdPartyOwned: " Los sitios de terceros vinculados directa o indirectamente a los sitios a continuación están bajo la responsabilidad de Import and Retail International."
 }

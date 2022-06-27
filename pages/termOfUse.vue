@@ -1,25 +1,42 @@
 <template>
-    <div>
-        <v-tex>
-            <h1>{{$t('tos')}}</h1>
-        </v-tex>
-
-        <v-text>
-            <p>The application <a href="https://www.anitech-connect.com">www.anitech-connect.com</a>&nbsp;<span>&nbsp;</span>of Import and Retail international constitutes a work protected in Ireland by the Intellectual Property Code, and abroad by international conventions on copyright. Violation of one of the copyrights is an offense of counterfeiting punishable, under the terms of article L.335-2 of the Intellectual Property Code, by 2 years' imprisonment and a fine of €150,000.</p>
-            <p>Protection of personal data and privacy policy</p>
-            <p>Visitors or customers of the site <a href="https://www.anitech-connect.com">www.anitech-connect.com </a>&nbsp; have the right to access, modify, rectify and delete data concerning them at any time. The processing of personal and/or personal information by Import and Retail International on the site</p>
-            <p>The purpose of the ANITECH CONNECT application is to make public the contact details of the owner of an ANITECH CONNECT tag,
-                </p>to allow them to be contacted and thus find their pet. Import and retail International DAC cannot be held responsible for any misuse by third parties.
-            <p>Link to other web sites</p>
-            <p>Third-party sites linked directly or indirectly to the site <a href="https://www.web-designers.fr">www.web-designers.fr</a> Is not under the responsabilty of Import and Retail international. </p> 
-            <p>Third-party sites linked directly or indirectly to the site <a href="https://www.import-retail.com">www.import-retail.com</a> Is under the responsabilty of Import and Retail international. </p> 
-            <p>Third-party sites linked directly or indirectly to the site <a href="https://www.anitech-shop.com">https://www.anitech-shop.com</a> Is under the responsabilty of Import and Retail international. </p>
-            <p>Third-party sites linked directly or indirectly to the site <a href="https://www.anitech-solutions.com">https://www.anitech-solutions.com</a> Is under the responsabilty of Import and Retail international. </p>  
-            <p> The web site www.import-retail</p>
-        </v-text>
-    </div>
+    <v-main class="white" style="padding: 0;">
+        <v-sheet
+        height="620"
+        class="overflow-hidden"
+        style="position: relative;"
+        >
+            <v-card black>
+                <v-row>
+                    <v-col cols="0" lg="2">
+                        <v-spacer></v-spacer>
+                    </v-col>
+                    <v-col cols="12" lg="8">
+                        <v-card
+                            elevation="11"
+                        >
+                            <v-text>
+                                <h1>{{$t('tos')}}</h1>
+                            </v-text>
+                            <v-card-text>
+                                    <p>{{$t('anitechConnectTos')}}
+                                        {{$t('thirdPartyNotOwned')}}
+                                        <a href="https://www.web-designers.fr">www.web-designers.fr</a>  
+                                        {{$t('thirdPartyOwned')}}
+                                        <a href="https://www.import-retail.com">www.import-retail.com</a>
+                                        <a href="https://www.anitech-shop.com">https://www.anitech-shop.com</a>
+                                        <a href="https://www.anitech-solutions.com">https://www.anitech-solutions.com</a>
+                                    </p>
+                            </v-card-text>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="0" lg="2">
+                        <v-spacer></v-spacer>
+                    </v-col>
+                </v-row>
+            </v-card>
+        </v-sheet>
+     </v-main>
 </template>
-
 <script>
 export default {
     setup () {

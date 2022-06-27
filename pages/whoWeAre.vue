@@ -14,14 +14,14 @@
                         <v-card
                             elevation="11"
                         >
-                            <v-card-title>
+                            <v-text>
                                 <h1>
                                     {{$t('whoWeAre')}}
                                 </h1>
-                            </v-card-title>
+                            </v-text>
                             <v-card-text>
-                                <p>ANITECH CONNECT is a web service owned by Import and Retail International Designated Activity. IR International is registered in Ireland <span itemprop="description">Number 594247.</span></p>
-                                <p>Company address:</p>
+                                <p><span itemprop="description">{{$t('whoWeAreDetailed')}}</span></p>
+                                <p>{{$t('companyAddress')}}</p>
                                 <p>Import and Retail international DAC</p>
                                 <p>Unit 3D North Point House, North Point Business Park, New Mallow Road</p>
                                 <p>T23 AT2P Cork Ireland</p>
