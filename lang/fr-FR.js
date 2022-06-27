@@ -8,7 +8,7 @@ export default {
     orderAnitechProduct: "Commander un produit",
     orderFromUs: "Commandez sur notre site Web",
     home: "Accueil",
-    connectyourTag: "Activer votre médaille",
+    connectYourTag: "Activer votre médaille",
     petFoundNav: "Rechercher",
     orderNav: "Commander",
     foundAPet: "Rechercher",

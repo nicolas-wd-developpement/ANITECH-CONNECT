@@ -8,7 +8,7 @@ export default {
         orderAnitechProduct: "Ordina prodotti ANITECH",
         orderFromUs: "Ordina dal nostro sito web",
         home: "Casa",
-        connectyourTag: "Collega il tuo tag",
+        connectYourTag: "Collega il tuo tag",
         petFoundNav: "Animale trovato",
         orderNav: "Ordine",
         foundAPet: "Trovato",
